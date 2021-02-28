@@ -1,0 +1,49 @@
+
+Secure Simple Text Editor
+version 0.2
+
+Copyright (C) 2020 António Manuel Dias
+contact: ammdias@gmail.com
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+
+Changes history:
+0.2 (2020-08-30): Changed configuration file location
+                  Added Linux local install script
+0.1 (2019-10-31): First version
+
+
+ABOUT THE PROGRAM
+=================
+
+This is a text editor (simple text) that stores the files encrypted
+by GnuPG (default symmetric encryption).
+
+Depends on Python 3.4+, with Tkinter, and GnuPG 2.
+
+
+USAGE
+=====
+
+Before using, confirm that you have GnuPG and Python 3 with Tkinter installed
+on your system.  If not, get them from your system's software store or from
+the official download sites:
+
+* Python: https://www.python.org/downloads/
+* GnuPG:  https://gnupg.org/download/index.html
+
+The program needs no special installation: just unzip the the compressed
+file and run 'sste.py' in the 'sste' directory, with Python 3.  Read the
+program's help for further instructions on how to use it.

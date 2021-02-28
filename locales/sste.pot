@@ -1,0 +1,521 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR ORGANIZATION
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2021-02-28 14:35+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: pygettext.py 1.5\n"
+
+
+#: seditor.py:218
+msgid "Error"
+msgstr ""
+
+#: seditor.py:235
+msgid "File has changed. Do you want to save it?"
+msgstr ""
+
+#: seditor.py:251
+msgid "Could not open file."
+msgstr ""
+
+#: seditor.py:258
+msgid "Wrong password."
+msgstr ""
+
+#: seditor.py:261 seditor.py:283
+msgid ""
+"GnuPG error:\n"
+"{}"
+msgstr ""
+
+#: seditor.py:292
+msgid "Could not write to file."
+msgstr ""
+
+#: seditor.py:318
+msgid "_File"
+msgstr ""
+
+#: seditor.py:320
+msgid "_New"
+msgstr ""
+
+#: seditor.py:322
+msgid "Ctrl+N"
+msgstr ""
+
+#: seditor.py:323
+msgid "_Open..."
+msgstr ""
+
+#: seditor.py:325
+msgid "Ctrl+O"
+msgstr ""
+
+#: seditor.py:326
+msgid "_Save"
+msgstr ""
+
+#: seditor.py:328
+msgid "Ctrl+S"
+msgstr ""
+
+#: seditor.py:329
+msgid "Save _As..."
+msgstr ""
+
+#: seditor.py:331
+msgid "Ctrl+Shift+S"
+msgstr ""
+
+#: seditor.py:333
+msgid "_Quit"
+msgstr ""
+
+#: seditor.py:335
+msgid "Ctrl+Q"
+msgstr ""
+
+#: seditor.py:339
+msgid "_Edit"
+msgstr ""
+
+#: seditor.py:341
+msgid "_Undo"
+msgstr ""
+
+#: seditor.py:343
+msgid "Ctrl+Z"
+msgstr ""
+
+#: seditor.py:345
+msgid "Re_do"
+msgstr ""
+
+#: seditor.py:347
+msgid "Ctrl+Shift+Z"
+msgstr ""
+
+#: seditor.py:350
+msgid "Cu_t"
+msgstr ""
+
+#: seditor.py:352
+msgid "Ctrl+X"
+msgstr ""
+
+#: seditor.py:354
+msgid "_Copy"
+msgstr ""
+
+#: seditor.py:356
+msgid "Ctrl+C"
+msgstr ""
+
+#: seditor.py:359
+msgid "_Paste"
+msgstr ""
+
+#: seditor.py:361
+msgid "Ctrl+V"
+msgstr ""
+
+#: seditor.py:365
+msgid "_Find..."
+msgstr ""
+
+#: seditor.py:367
+msgid "Ctrl+F"
+msgstr ""
+
+#: seditor.py:368
+msgid "_Replace..."
+msgstr ""
+
+#: seditor.py:370
+msgid "Ctrl+R"
+msgstr ""
+
+#: seditor.py:372
+msgid "Select _All"
+msgstr ""
+
+#: seditor.py:374
+msgid "Ctrl+A"
+msgstr ""
+
+#: seditor.py:376
+msgid "_Settings..."
+msgstr ""
+
+#: seditor.py:382
+msgid "_Help"
+msgstr ""
+
+#: seditor.py:384
+msgid "_Manual"
+msgstr ""
+
+#: seditor.py:386
+msgid "F1"
+msgstr ""
+
+#: seditor.py:388
+msgid "_About"
+msgstr ""
+
+#: seditor.py:391
+msgid "_Copyright"
+msgstr ""
+
+#: seditor.py:394
+msgid "_Warranty"
+msgstr ""
+
+#: seditor.py:403
+msgid "<Control-n>"
+msgstr ""
+
+#: seditor.py:404
+msgid "<Control-o>"
+msgstr ""
+
+#: seditor.py:405
+msgid "<Control-s>"
+msgstr ""
+
+#: seditor.py:406
+msgid "<Control-S>"
+msgstr ""
+
+#: seditor.py:407
+msgid "<Control-q>"
+msgstr ""
+
+#: seditor.py:410
+msgid "<Control-f>"
+msgstr ""
+
+#: seditor.py:411
+msgid "<Control-r>"
+msgstr ""
+
+#: seditor.py:412
+msgid "<Control-a>"
+msgstr ""
+
+#: seditor.py:415
+msgid "<F1>"
+msgstr ""
+
+#: segpg.py:59
+msgid "Could not execute GnuPG."
+msgstr ""
+
+#: semessage.py:64
+msgid "Close"
+msgstr ""
+
+#: sepassword.py:56
+msgid "Password:"
+msgstr ""
+
+#: sepassword.py:62
+msgid "Confirm:"
+msgstr ""
+
+#: sepassword.py:80
+msgid "Error:"
+msgstr ""
+
+#: sepassword.py:81
+msgid "Entered passwords don't match."
+msgstr ""
+
+#: sesearch.py:54
+msgid "Find text:"
+msgstr ""
+
+#: sesearch.py:62
+msgid "Replace with:"
+msgstr ""
+
+#: sesearch.py:85
+msgid "Replace text"
+msgstr ""
+
+#: sesearch.py:86
+msgid "Replace current selection?"
+msgstr ""
+
+#: sesearch.py:96
+msgid "Text not found."
+msgstr ""
+
+#: sesearch.py:97
+msgid "Go to top of document?"
+msgstr ""
+
+#: sesettings.py:62
+msgid "Text color:"
+msgstr ""
+
+#: sesettings.py:69
+msgid "Background color:"
+msgstr ""
+
+#: sesettings.py:75
+msgid "GnuPG path:"
+msgstr ""
+
+#: sesettings.py:88
+msgid "Text color"
+msgstr ""
+
+#: sesettings.py:100
+msgid "Background color"
+msgstr ""
+
+#: sesettings.py:111
+msgid "GnuPG path"
+msgstr ""
+
+#: setext.py:61
+msgid ""
+"Editor for secure (encrypted) simple text files\n"
+"(C) 2021 António Manuel Dias\n"
+"\n"
+"This program is free software: you can redistribute it and/or modify\n"
+"it under the terms of the GNU General Public License as published by\n"
+"the Free Software Foundation, either version 3 of the License, or\n"
+"(at your option) any later version.\n"
+"\n"
+"This program is distributed in the hope that it will be useful,\n"
+"but WITHOUT ANY WARRANTY; without even the implied warranty of\n"
+"MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n"
+"GNU General Public License for more details.\n"
+"\n"
+"You should have received a copy of the GNU General Public License\n"
+"along with this program.  If not, see <https://www.gnu.org/licenses/>."
+msgstr ""
+
+#: setext.py:77
+msgid ""
+"From the Preamble of the GNU General Public License:\n"
+"        \n"
+"The GNU General Public License is a free, copyleft license for\n"
+"software and other kinds of works.\n"
+"\n"
+"The licenses for most software and other practical works are designed\n"
+"to take away your freedom to share and change the works.  By contrast,\n"
+"the GNU General Public License is intended to guarantee your freedom to\n"
+"share and change all versions of a program--to make sure it remains free\n"
+"software for all its users.  We, the Free Software Foundation, use the\n"
+"GNU General Public License for most of our software; it applies also to\n"
+"any other work released this way by its authors.  You can apply it to\n"
+"your programs, too.\n"
+"\n"
+"When we speak of free software, we are referring to freedom, not\n"
+"price.  Our General Public Licenses are designed to make sure that you\n"
+"have the freedom to distribute copies of free software (and charge for\n"
+"them if you wish), that you receive source code or can get it if you\n"
+"want it, that you can change the software or use pieces of it in new\n"
+"free programs, and that you know you can do these things.\n"
+"\n"
+"To protect your rights, we need to prevent others from denying you\n"
+"these rights or asking you to surrender the rights.  Therefore, you have\n"
+"certain responsibilities if you distribute copies of the software, or if\n"
+"you modify it: responsibilities to respect the freedom of others.\n"
+"\n"
+"For example, if you distribute copies of such a program, whether\n"
+"gratis or for a fee, you must pass on to the recipients the same\n"
+"freedoms that you received.  You must make sure that they, too, receive\n"
+"or can get the source code.  And you must show them these terms so they\n"
+"know their rights.\n"
+"\n"
+"See the file 'gpl.txt' on the program's directory for more details.\n"
+"If it's missing please refer to http://www.gnu.org/licenses/gpl.txt\n"
+msgstr ""
+
+#: setext.py:113
+msgid ""
+"From the GNU General Public License:\n"
+"    \n"
+"15. Disclaimer of Warranty.\n"
+"\n"
+"THERE IS NO WARRANTY FOR THE PROGRAM, TO THE EXTENT PERMITTED BY\n"
+"APPLICABLE LAW.  EXCEPT WHEN OTHERWISE STATED IN WRITING THE\n"
+"COPYRIGHT HOLDERS AND/OR OTHER PARTIES PROVIDE THE PROGRAM \"AS IS\"\n"
+"WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING,\n"
+"BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND\n"
+"FITNESS FOR A PARTICULAR PURPOSE.  THE ENTIRE RISK AS TO THE QUALITY\n"
+"AND PERFORMANCE OF THE PROGRAM IS WITH YOU.  SHOULD THE PROGRAM PROVE\n"
+"DEFECTIVE, YOU ASSUME THE COST OF ALL NECESSARY SERVICING, REPAIR OR\n"
+"CORRECTION.\n"
+"\n"
+"16. Limitation of Liability.\n"
+"\n"
+"IN NO EVENT UNLESS REQUIRED BY APPLICABLE LAW OR AGREED TO IN WRITING\n"
+"WILL ANY COPYRIGHT HOLDER, OR ANY OTHER PARTY WHO MODIFIES AND/OR\n"
+"CONVEYS THE PROGRAM AS PERMITTED ABOVE, BE LIABLE TO YOU FOR DAMAGES,\n"
+"INCLUDING ANY GENERAL, SPECIAL, INCIDENTAL OR CONSEQUENTIAL DAMAGES\n"
+"ARISING OUT OF THE USE OR INABILITY TO USE THE PROGRAM (INCLUDING BUT\n"
+"NOT LIMITED TO LOSS OF DATA OR DATA BEING RENDERED INACCURATE OR LOSSES\n"
+"SUSTAINED BY YOU OR THIRD PARTIES OR A FAILURE OF THE PROGRAM TO\n"
+"OPERATE WITH ANY OTHER PROGRAMS), EVEN IF SUCH HOLDER OR OTHER PARTY\n"
+"HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.\n"
+msgstr ""
+
+#: setext.py:144
+msgid ""
+"\n"
+"Secure Simple Text Editor\n"
+"\n"
+"Copyright (C) 2021 António Manuel Dias\n"
+"contact: ammdias@gmail.com\n"
+"\n"
+"This program comes with ABSOLUTELY NO WARRANTY;  for details use command\n"
+"'sste.py --warranty' or go to 'Help > Warranty' on the graphical user\n"
+"interface.\n"
+"\n"
+"This is free software, and you are welcome to redistribute it under certain\n"
+"conditions; use command 'sste.py --copyright' or go to 'Help > Copyright' on\n"
+"the graphical user interface for details.\n"
+"\n"
+"----\n"
+"\n"
+"SSTE is a simple-text editor that stores the files encrypted by GnuPG with its\n"
+"default symmetric algorithm.  It depends on GnuPG and Python 3 with Tkinter.\n"
+"\n"
+"\n"
+"Installation and first run\n"
+"==========================\n"
+"\n"
+"To install, simply uncompress the zip file, navigate to the uncompressed\n"
+"directory and run 'sste.py' with Python 3.\n"
+"\n"
+"Alternately, in Linux or other Unix-like operating system, you may use the\n"
+"included installation script to install the program for a single user:\n"
+"\n"
+"    $ bash local_install.sh\n"
+"\n"
+"The program will try to find the GnuPG executable in the PATH.  If it can not\n"
+"find it, it will prompt the user to manually provide the path in the Settings\n"
+"Dialog (see below).  If GnuPG is not installed in your system, please download\n"
+"it from the system's software store or, at your option, from the GnuPG site:\n"
+"\n"
+"* https://gnupg.org/download/index.html\n"
+"\n"
+"\n"
+"Usage\n"
+"=====\n"
+"\n"
+"The program works as any common graphical simple-text editor.  You may insert,\n"
+"delete, select, copy and paste text as usual.  When saving you will be prompted\n"
+"to insert and confirm a password to encrypt the file.  Similarly, when opening\n"
+"a file the program will ask for a password to decrypt the file.\n"
+"\n"
+"Below is a description of the menu items and its actions:\n"
+"\n"
+"File menu\n"
+"---------\n"
+"\n"
+"* New: start editing a new file.  If the file you were currently editing was\n"
+"       modified since the last save you will be prompted to save it.\n"
+"\n"
+"* Open: open a saved file.  When prompted insert the password used to encrypt\n"
+"        the file and press 'ENTER'.  Press 'ESCAPE' to stay editing the same\n"
+"        file.\n"
+"\n"
+"* Save: save the current file.  Insert the password to encrypt the file,\n"
+"        confirm it and then press 'ENTER' to save the file.  Press 'ESCAPE'\n"
+"        to cancel.\n"
+"\n"
+"* Save as: save the current file with a different name.\n"
+"\n"
+"* Quit: close the program.  You will be prompted to save the file if it has\n"
+"        changed since the last save.\n"
+"\n"
+"Edit menu\n"
+"---------\n"
+"\n"
+"* Undo: undo most recent change in the text.\n"
+"\n"
+"* Redo: redo most recent undo in the text.\n"
+"\n"
+"* Cut: cut the selected text into the clipboard.\n"
+"\n"
+"* Copy: copy the selected text to the clipboard.\n"
+"\n"
+"* Paste: insert the clipboard text.\n"
+"\n"
+"* Find: find pieces of text in the editor.  Insert the text to find in the\n"
+"        dialog and press 'ENTER'.  If the text is found it will be selected and\n"
+"        shown in the editor window.  If not found, a warning will be given\n"
+"        that the end of the file was reached -- you may restart the search\n"
+"        from the top of the file.  Press 'ESCAPE' to close the dialog.\n"
+"\n"
+"* Replace: replace pieces of text in the editor.  Insert the text to find and\n"
+"           the text to replace it in the dialog and press 'ENTER'.  If the\n"
+"           text is found, you will be asked if you want to replace it.\n"
+"\n"
+"* Select all: select all text in the editor.\n"
+"\n"
+"* Settings: change the settings of the editor.  When finished, press 'ENTER'\n"
+"            to activate changes and close the dialog or 'ESCAPE' to reset the\n"
+"            changes.  Available options:\n"
+"\n"
+"    * Text color: change the color of the text. Click the button to open the\n"
+"                  color choosing dialog.\n"
+"    * Background color: change the background (paper) color.  Click the button\n"
+"                        to open the color choosing dialog.\n"
+"    * GnuPG path: choose the correct path to the GnuPG executable.  Click the\n"
+"                  button to open the file dialog.\n"
+"\n"
+"Help menu\n"
+"---------\n"
+"\n"
+"* Manual: display this dialog.\n"
+"\n"
+"* About: display information about the program.\n"
+"\n"
+"* Copyright: display the copyright information.\n"
+"\n"
+"* Warranty: display the warranty information.\n"
+msgstr ""
+
+#: sste.py:71
+msgid "file to open"
+msgstr ""
+
+#: sste.py:74
+msgid "GnuPG command, including complete path if not on PATH"
+msgstr ""
+
+#: sste.py:77
+msgid "show copyright information."
+msgstr ""
+
+#: sste.py:80
+msgid "show warranty information."
+msgstr ""
+
+#: sste.py:83
+msgid "show version information."
+msgstr ""
+
+#: sste.py:111
+msgid ""
+"Could not load '.config' file.\n"
+"Starting with default configuration."
+msgstr ""
+
