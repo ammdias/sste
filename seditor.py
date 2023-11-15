@@ -14,16 +14,13 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with this program.  If not, see <https://www.gnu.org/licenses/>."""
+along with this program.  If not, see <https://www.gnu.org/licenses/>.
+"""
 
-__version__ = '0.2'
+__version__ = '0.3'
+__date__ = '2023-11-12'
 __license__ ='GNU General Public License version 3'
 __author__ = 'António Manuel Dias <ammdias@gmail.com>'
-
-
-#------------------------------------------------------------------------------
-# Changes history:
-#  0.1 (2019/Oct.31):  first version
 
 
 from tkinter import *
@@ -36,9 +33,8 @@ from setext import _
 
 from semessage import TextDialog
 from sesearch import SearchDialog
-from sepassword import PasswordDialog
 from sesettings import SettingsDialog
-from segpg import checkGnuPG, encrypt, decrypt, BadPassword, GnuPGError
+from segpg import checkGnuPG, encrypt, decrypt, GnuPGError
 
 
 #-------------------------------------------------------------------------------
@@ -94,7 +90,7 @@ class SecureEditor():
         '''
         if self.safeToCloseDoc():
             self.filename = DEFAULT_FILENAME
-            self.text.delete('1.0', 'end')
+            self.text.delete('1.0', 'end-1c')
             self.text.focus()
             self.text.edit_modified(0)
 
@@ -153,7 +149,7 @@ class SecureEditor():
     def onSelectAll(self, *args):
         '''Select all text.
         '''
-        self.text.tag_add('sel', "1.0", 'end')
+        self.text.tag_add('sel', "1.0", 'end-1c')
 
 
     def onSettings(self, *args):
@@ -243,65 +239,36 @@ class SecureEditor():
     def openFile(self):
         '''Open and decrypt file.
         '''
-        passwd = self.getPassword(confirm=False)
-        if passwd:
-            try:
-                text = open(self.filename, 'rb').read()
-            except:
-                self.error(_('Could not open file.'))
-                self.filename = DEFAULT_FILENAME
-                return
+        try:
+            text = decrypt(self.config['gnupg'], self.filename)
+        except GnuPGError as e:
+            self.error(_('GnuPG error:\n{}').format(str(e)))
+            return
+        except Exception as e:
+            self.error(e)
+            return
 
-            try:
-                text = decrypt(self.config['gnupg'], text, passwd)
-            except BadPassword:
-                self.error(_('Wrong password.'))
-                return
-            except GnuPGError as e:
-                self.error(_('GnuPG error:\n{}').format(str(e)))
-                return
-            except Exception as e:
-                self.error(e)
-                return
-
-            self.text.delete('1.0', 'end')
-            self.text.insert('1.0', text)
-            self.text.mark_set('insert', '1.0')
-            self.text.see('insert')
-            self.text.edit_modified(0)
+        self.text.delete('1.0', 'end-1c')
+        self.text.insert('1.0', text)
+        self.text.mark_set('insert', '1.0')
+        self.text.see('insert')
+        self.text.edit_modified(0)
 
     
     def saveFile(self):
         '''Encrypt and save file.
         '''
-        passwd = self.getPassword(confirm=True)
-        if passwd:
-            try:
-                text = encrypt(self.config['gnupg'],
-                               self.text.get('1.0', 'end'), passwd)
-            except GnuPGError as e:
-                self.error(_('GnuPG error:\n{}').format(str(e)))
-                return
-            except Exception as e:
-                self.error(e)
-                return
-
-            try:
-                open(self.filename, 'wb').write(text)
-            except:
-                self.error(_('Could not write to file.'))
-                self.filename = DEFAULT_FILENAME
-                return
-            
-            self.text.edit_modified(0)
-
-
-    def getPassword(self, confirm):
-        '''Show get password dialog.
-        '''
-        passdialog = PasswordDialog(self.win, confirm)
-        self.win.wait_window(passdialog)
-        return passdialog.password
+        try:
+            text = self.text.get('1.0', 'end-1c')
+            encrypt(self.config['gnupg'], text, self.filename)
+        except GnuPGError as e:
+            self.error(_('GnuPG error:\n{}').format(str(e)))
+            return
+        except Exception as e:
+            self.error(e)
+            return
+        
+        self.text.edit_modified(0)
 
 
     #--------------------------------------------------------------------------

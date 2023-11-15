@@ -17,10 +17,10 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 """
 
-#------------------------------------------------------------------------------
-# Changes history:
-#  0.2 (2020-08-30): Changes in sste.py, updated help
-#  0.1 (2019-10-31): First version
+__version__ = '0.3'
+__date__ = '2023-11-13'
+__license__ ='GNU General Public License version 3'
+__author__ = 'António Manuel Dias <ammdias@gmail.com>'
 
 
 import os
@@ -55,11 +55,11 @@ DEFAULT_FILENAME = 'Secure text file'
 # Legal stuff constants
 
 SSTE_NAME = 'Secure Simple Text Editor'
-SSTE_VERSION = '0.2'
+SSTE_VERSION = '0.3'
 SSTE_WEBSITE = 'https://ammdias.duckdns.org/downloads'
 SSTE_WEBSITE_LABEL = 'AMMDIAS'
 SSTE_SHORT_COPYRIGHT = _('''Editor for secure (encrypted) simple text files
-(C) 2021 António Manuel Dias
+(C) 2019 António Manuel Dias
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -144,7 +144,7 @@ HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
 SSTE_HELP = _('''
 Secure Simple Text Editor
 
-Copyright (C) 2021 António Manuel Dias
+Copyright (C) 2019 António Manuel Dias
 contact: ammdias@gmail.com
 
 This program comes with ABSOLUTELY NO WARRANTY;  for details use command
@@ -168,9 +168,9 @@ To install, simply uncompress the zip file, navigate to the uncompressed
 directory and run 'sste.py' with Python 3.
 
 Alternately, in Linux or other Unix-like operating system, you may use the
-included installation script to install the program for a single user:
+included installation script to install the program:
 
-    $ bash local_install.sh
+    $ python3 INSTALL.py
 
 The program will try to find the GnuPG executable in the PATH.  If it can not
 find it, it will prompt the user to manually provide the path in the Settings

@@ -16,18 +16,13 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with this program.  If not, see <https://www.gnu.org/licenses/>."""
+along with this program.  If not, see <https://www.gnu.org/licenses/>.
+"""
 
-__version__ = '0.2'
-__date__ = '2020-08-30'
+__version__ = '0.3'
+__date__ = '2023-11-13'
 __license__ ='GNU General Public License version 3'
 __author__ = 'António Manuel Dias <ammdias@gmail.com>'
-
-
-#------------------------------------------------------------------------------
-# Changes history:
-#  0.2 (2020-08-30):  Changed configuration file location
-#  0.1 (2019-10-31):  First version
 
 
 import os

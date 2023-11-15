@@ -15,56 +15,27 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with this program.  If not, see <https://www.gnu.org/licenses/>."""
+along with this program.  If not, see <https://www.gnu.org/licenses/>.
+"""
 
-__version__ = '0.2'
+__version__ = '0.3'
+__date__ = '2023-11-12'
 __license__ ='GNU General Public License version 3'
 __author__ = 'António Manuel Dias <ammdias@gmail.com>'
 
 
-#------------------------------------------------------------------------------
-# Changes history:
-#  0.1 (2019/Oct.31):    first version
-
-
+import sys
+import subprocess
 from setext import _
-from subprocess import check_call, Popen, PIPE, DEVNULL
 
 
 #------------------------------------------------------------------------------
 # Exceptions
 
-class BadPassword(Exception):
-    '''Wrong password in decryption.
-    '''
-    pass
-
 class GnuPGError(Exception):
     '''Generic GnuPG error.
     '''
     pass
-
-
-#------------------------------------------------------------------------------
-# utility functions
-
-def _execute(gpg, text, passwd, cmd):
-    '''Execute GnuPG with command 'cmd' and return answer.
-    '''
-    try:
-        proc = Popen((gpg, cmd, '--batch', '--quiet', '--passphrase', passwd),
-                      stdin=PIPE, stdout=PIPE, stderr=PIPE)
-        text, err = proc.communicate(text)
-    except:
-        raise Exception(_('Could not execute GnuPG.'))
-
-    if err:
-        err = err.decode(encoding='utf-8')
-        if 'Bad session key' in err:
-            raise BadPassword
-        raise GnuPGError(e)
-
-    return text
 
 
 #------------------------------------------------------------------------------
@@ -74,29 +45,48 @@ def checkGnuPG(gpg):
     '''Check ig GnuPG is available.
     gpg: path to GnuPG executable.
     '''
+
     try:
-        check_call((gpg, '--version'), stdout=DEVNULL, stderr=DEVNULL)
+        res = subprocess.run([gpg, '--version'])
     except:
         return False
 
-    return True
+    return res.returncode == 0
 
 
-def encrypt(gpg, text, passwd):
+def encrypt(gpg, text, filename):
     '''Encrypt text with password.
     gpg: path to GnuPG executable.
     passwd: passphrase to use in encryption.
     text: string with text to encrypt.
     Return bytes array with encrypted text.
     '''
-    return _execute(gpg, bytes(text, encoding='utf-8'), passwd, '-c')
+    try:
+        res = subprocess.run([gpg, '--symmetric', '--quiet', '--yes',
+                                   '--output', filename],
+                             capture_output=True,
+                             input=text.encode(sys.stdin.encoding)) 
+    except:
+        raise Exception(_('Could not execute GnuPG.'))
+
+    if res.returncode != 0:
+        raise GnuPGError(res.stderr.decode(sys.stdout.encoding))
 
 
-def decrypt(gpg, text, passwd):
+def decrypt(gpg, filename):
     '''Decrypt text with password.
     gpg: path to GnuPG executable.
     passwd: passphrase to use in decryption.
     text: bytes array with encrypted text.
     Returns string with decrypted text.'''
-    return _execute(gpg, text, passwd, '-d').decode(encoding='utf-8')
+    try:
+        res = subprocess.run([gpg, '--decrypt', '--quiet', filename],
+                             capture_output=True) 
+    except:
+        raise Exception(_('Could not execute GnuPG.'))
+
+    if res.returncode != 0:
+        raise GnuPGError(res.stderr.decode(sys.stdout.encoding))
+
+    return res.stdout.decode(sys.stdout.encoding)
 

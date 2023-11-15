@@ -1,12 +1,12 @@
 # Secure Simple Text Editor Translation template.
-# Copyright (C) 2021 António Manuel Dias
-# António Manuel Dias <ammdias@gmail.com>, 2021.
+# Copyright (C) 2019 António Manuel Dias
+# António Manuel Dias <ammdias@gmail.com>, 2019.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: 0.2\n"
-"POT-Creation-Date: 2021-02-28 14:17+WET\n"
-"PO-Revision-Date: 2021-02-28 14:20+WET\n"
+"Project-Id-Version: 0.3\n"
+"POT-Creation-Date: 2023-11-14 16:41+0000\n"
+"PO-Revision-Date: 2023-11-14 20:00+WET\n"
 "Last-Translator: Antńio Manuel Dias <ammdias@gmail.com>\n"
 "Language-Team: pt_PT <ammdias>\n"
 "MIME-Version: 1.0\n"
@@ -15,23 +15,15 @@ msgstr ""
 "Generated-By: pygettext.py 1.5\n"
 
 
-#: seditor.py:218
+#: seditor.py:214
 msgid "Error"
 msgstr "Erro"
 
-#: seditor.py:235
+#: seditor.py:231
 msgid "File has changed. Do you want to save it?"
 msgstr "O ficheiro foi alterado. Deseja guardá-lo?"
 
-#: seditor.py:251
-msgid "Could not open file."
-msgstr "Não foi possível abrir o ficheiro."
-
-#: seditor.py:258
-msgid "Wrong password."
-msgstr "Senha errada."
-
-#: seditor.py:261 seditor.py:283
+#: seditor.py:245 seditor.py:265
 msgid ""
 "GnuPG error:\n"
 "{}"
@@ -39,262 +31,242 @@ msgstr ""
 "Erro no GnuPG:\n"
 "{}"
 
-#: seditor.py:292
-msgid "Could not write to file."
-msgstr "Não foi possível guardar o ficheiro."
-
-#: seditor.py:318
+#: seditor.py:285
 msgid "_File"
 msgstr "_Ficheiro"
 
-#: seditor.py:320
+#: seditor.py:287
 msgid "_New"
 msgstr "_Novo"
 
-#: seditor.py:322
+#: seditor.py:289
 msgid "Ctrl+N"
 msgstr "Ctrl+N"
 
-#: seditor.py:323
+#: seditor.py:290
 msgid "_Open..."
 msgstr "_Abrir..."
 
-#: seditor.py:325
+#: seditor.py:292
 msgid "Ctrl+O"
 msgstr "Ctrl+O"
 
-#: seditor.py:326
+#: seditor.py:293
 msgid "_Save"
 msgstr "_Guardar"
 
-#: seditor.py:328
+#: seditor.py:295
 msgid "Ctrl+S"
 msgstr "Ctrl+S"
 
-#: seditor.py:329
+#: seditor.py:296
 msgid "Save _As..."
 msgstr "Guardar _Como..."
 
-#: seditor.py:331
+#: seditor.py:298
 msgid "Ctrl+Shift+S"
 msgstr "Ctrl+Shift+S"
 
-#: seditor.py:333
+#: seditor.py:300
 msgid "_Quit"
 msgstr "Sai_r"
 
-#: seditor.py:335
+#: seditor.py:302
 msgid "Ctrl+Q"
 msgstr "Ctrl+Q"
 
-#: seditor.py:339
+#: seditor.py:306
 msgid "_Edit"
 msgstr "_Editar"
 
-#: seditor.py:341
+#: seditor.py:308
 msgid "_Undo"
 msgstr "_Desfazer"
 
-#: seditor.py:343
+#: seditor.py:310
 msgid "Ctrl+Z"
 msgstr "Ctrl+Z"
 
-#: seditor.py:345
+#: seditor.py:312
 msgid "Re_do"
 msgstr "_Refazer"
 
-#: seditor.py:347
+#: seditor.py:314
 msgid "Ctrl+Shift+Z"
 msgstr "Ctrl+Shift+Z"
 
-#: seditor.py:350
+#: seditor.py:317
 msgid "Cu_t"
 msgstr "Cort_ar"
 
-#: seditor.py:352
+#: seditor.py:319
 msgid "Ctrl+X"
 msgstr "Ctrl+X"
 
-#: seditor.py:354
+#: seditor.py:321
 msgid "_Copy"
 msgstr "_Copiar"
 
-#: seditor.py:356
+#: seditor.py:323
 msgid "Ctrl+C"
 msgstr "Ctrl+C"
 
-#: seditor.py:359
+#: seditor.py:326
 msgid "_Paste"
 msgstr "Co_lar"
 
-#: seditor.py:361
+#: seditor.py:328
 msgid "Ctrl+V"
 msgstr "Ctrl+V"
 
-#: seditor.py:365
+#: seditor.py:332
 msgid "_Find..."
 msgstr "_Procurar..."
 
-#: seditor.py:367
+#: seditor.py:334
 msgid "Ctrl+F"
 msgstr "Ctrl+F"
 
-#: seditor.py:368
+#: seditor.py:335
 msgid "_Replace..."
 msgstr "_Substituir..."
 
-#: seditor.py:370
+#: seditor.py:337
 msgid "Ctrl+R"
 msgstr ""
 
-#: seditor.py:372
+#: seditor.py:339
 msgid "Select _All"
 msgstr "Selecionar _Tudo"
 
-#: seditor.py:374
+#: seditor.py:341
 msgid "Ctrl+A"
 msgstr "Ctrl+A"
 
-#: seditor.py:376
+#: seditor.py:343
 msgid "_Settings..."
 msgstr "C_onfiguração..."
 
-#: seditor.py:382
+#: seditor.py:349
 msgid "_Help"
 msgstr "_Ajuda"
 
-#: seditor.py:384
+#: seditor.py:351
 msgid "_Manual"
 msgstr "_Manual"
 
-#: seditor.py:386
+#: seditor.py:353
 msgid "F1"
 msgstr "F1"
 
-#: seditor.py:388
+#: seditor.py:355
 msgid "_About"
 msgstr "_Sobre"
 
-#: seditor.py:391
+#: seditor.py:358
 msgid "_Copyright"
 msgstr "_Licença"
 
-#: seditor.py:394
+#: seditor.py:361
 msgid "_Warranty"
 msgstr "_Garantia"
 
-#: seditor.py:403
+#: seditor.py:370
 msgid "<Control-n>"
 msgstr "<Control-n>"
 
-#: seditor.py:404
+#: seditor.py:371
 msgid "<Control-o>"
 msgstr "<Control-o>"
 
-#: seditor.py:405
+#: seditor.py:372
 msgid "<Control-s>"
 msgstr "<Control-s>"
 
-#: seditor.py:406
+#: seditor.py:373
 msgid "<Control-S>"
 msgstr "<Control-S>"
 
-#: seditor.py:407
+#: seditor.py:374
 msgid "<Control-q>"
 msgstr "<Control-q>"
 
-#: seditor.py:410
+#: seditor.py:377
 msgid "<Control-f>"
 msgstr "<Control-f>"
 
-#: seditor.py:411
+#: seditor.py:378
 msgid "<Control-r>"
 msgstr "<Control-r>"
 
-#: seditor.py:412
+#: seditor.py:379
 msgid "<Control-a>"
 msgstr "<Control-a>"
 
-#: seditor.py:415
+#: seditor.py:382
 msgid "<F1>"
 msgstr "<F1>"
 
-#: segpg.py:59
+#: segpg.py:70 segpg.py:86
 msgid "Could not execute GnuPG."
 msgstr "Não foi possível executar o GnuPG."
 
-#: semessage.py:64
+#: semessage.py:61
 msgid "Close"
 msgstr "Fechar"
 
-#: sepassword.py:56
-msgid "Password:"
-msgstr "Senha:"
-
-#: sepassword.py:62
-msgid "Confirm:"
-msgstr "Confirmação:"
-
-#: sepassword.py:80
-msgid "Error:"
-msgstr "Erro:"
-
-#: sepassword.py:81
-msgid "Entered passwords don't match."
-msgstr "Senhas introduzidas não coincidem."
-
-#: sesearch.py:54
+#: sesearch.py:51
 msgid "Find text:"
 msgstr "Texto a procurar:"
 
-#: sesearch.py:62
+#: sesearch.py:59
 msgid "Replace with:"
 msgstr "Substituir por:"
 
-#: sesearch.py:85
+#: sesearch.py:82
 msgid "Replace text"
 msgstr "Substituir texto"
 
-#: sesearch.py:86
+#: sesearch.py:83
 msgid "Replace current selection?"
 msgstr "Substituir o texto selecionado?"
 
-#: sesearch.py:96
+#: sesearch.py:93
 msgid "Text not found."
 msgstr "Texto não encontrado."
 
-#: sesearch.py:97
+#: sesearch.py:94
 msgid "Go to top of document?"
 msgstr "Ir para o início do documento?"
 
-#: sesettings.py:62
+#: sesettings.py:59
 msgid "Text color:"
 msgstr "Cor do texto:"
 
-#: sesettings.py:69
+#: sesettings.py:66
 msgid "Background color:"
 msgstr "Cor do fundo:"
 
-#: sesettings.py:75
+#: sesettings.py:72
 msgid "GnuPG path:"
 msgstr "Localização do GnuPG:"
 
-#: sesettings.py:88
+#: sesettings.py:85
 msgid "Text color"
 msgstr "Cor do texto"
 
-#: sesettings.py:100
+#: sesettings.py:97
 msgid "Background color"
 msgstr "Cor do fundo"
 
-#: sesettings.py:111
+#: sesettings.py:108
 msgid "GnuPG path"
 msgstr "Localização do GnuPG"
 
 #: setext.py:61
 msgid ""
 "Editor for secure (encrypted) simple text files\n"
-"(C) 2021 António Manuel Dias\n"
+"(C) 2019 António Manuel Dias\n"
 "\n"
 "This program is free software: you can redistribute it and/or modify\n"
 "it under the terms of the GNU General Public License as published by\n"
@@ -310,7 +282,7 @@ msgid ""
 "along with this program.  If not, see <https://www.gnu.org/licenses/>."
 msgstr ""
 "Editor de ficheiros de texto simples seguros (cifrados)\n"
-"(C) 2021 António Manuel Dias\n"
+"(C) 2019 António Manuel Dias\n"
 "\n"
 "Este programa é software livre: pode redistribui-lo e/ou modificá-lo\n"
 "sob os termos da Licença Pública Geral GNU, tal como publicada pela\n"
@@ -457,7 +429,7 @@ msgid ""
 "\n"
 "Secure Simple Text Editor\n"
 "\n"
-"Copyright (C) 2021 António Manuel Dias\n"
+"Copyright (C) 2019 António Manuel Dias\n"
 "contact: ammdias@gmail.com\n"
 "\n"
 "This program comes with ABSOLUTELY NO WARRANTY;  for details use command\n"
@@ -481,9 +453,9 @@ msgid ""
 "directory and run 'sste.py' with Python 3.\n"
 "\n"
 "Alternately, in Linux or other Unix-like operating system, you may use the\n"
-"included installation script to install the program for a single user:\n"
+"included installation script to install the program:\n"
 "\n"
-"    $ bash local_install.sh\n"
+"    $ python3 INSTALL.py\n"
 "\n"
 "The program will try to find the GnuPG executable in the PATH.  If it can not\n"
 "find it, it will prompt the user to manually provide the path in the Settings\n"
@@ -572,7 +544,7 @@ msgstr ""
 "\n"
 "Secure Simple Text Editor\n"
 "\n"
-"Copyright (C) 2021 António Manuel Dias\n"
+"Copyright (C) 2019 António Manuel Dias\n"
 "contact: ammdias@gmail.com\n"
 "\n"
 "Este programa é distribuído SEM QUALQUER GARANTIA;  para mais detalhes use o\n"
@@ -599,7 +571,7 @@ msgstr ""
 "o script de instalação incluído para instalar o programa para um único\n"
 "utilizador:\n"
 "\n"
-"    $ bash local_install.sh\n"
+"    $ python3 INSTALL.py\n"
 "\n"
 "O programa tentará encontrar o executável do GnuPG no PATH.  Não o\n"
 "conseguindo, pedirá ao utilizador para providenciar a sua localização\n"
@@ -686,15 +658,15 @@ msgstr ""
 "\n"
 "* Garantia: mostrar informação sobre a garantia do programa.\n"
 
-#: sste.py:71
+#: sste.py:66
 msgid "file to open"
 msgstr "ficheiro a abrir"
 
-#: sste.py:74
+#: sste.py:69
 msgid "GnuPG command, including complete path if not on PATH"
 msgstr "Comando do GnuPG, incluindo a localização completa se não estiver no PATH"
 
-#: sste.py:77
+#: sste.py:72
 msgid "show copyright information."
 msgstr "mostrar licença de utilização."
 
@@ -702,11 +674,11 @@ msgstr "mostrar licença de utilização."
 msgid "show warranty information."
 msgstr "mostrar garantia."
 
-#: sste.py:83
+#: sste.py:78
 msgid "show version information."
 msgstr "mostrar versão da aplicação."
 
-#: sste.py:111
+#: sste.py:106
 msgid ""
 "Could not load '.config' file.\n"
 "Starting with default configuration."
