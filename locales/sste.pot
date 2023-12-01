@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2023-11-14 16:41+0000\n"
+"POT-Creation-Date: 2023-12-01 22:20+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -15,250 +15,312 @@ msgstr ""
 "Generated-By: pygettext.py 1.5\n"
 
 
-#: seditor.py:214
+#: seditor.py:226
+msgid ""
+"Could not find GnuPG in the PATH.\n"
+"Please configure it manually."
+msgstr ""
+
+#: seditor.py:236
 msgid "Error"
 msgstr ""
 
-#: seditor.py:231
+#: seditor.py:252
+msgid "Close document"
+msgstr ""
+
+#: seditor.py:253
 msgid "File has changed. Do you want to save it?"
 msgstr ""
 
-#: seditor.py:245 seditor.py:265
+#: seditor.py:267 seditor.py:293
 msgid ""
 "GnuPG error:\n"
 "{}"
 msgstr ""
 
-#: seditor.py:285
-msgid "_File"
-msgstr ""
-
-#: seditor.py:287
-msgid "_New"
-msgstr ""
-
-#: seditor.py:289
-msgid "Ctrl+N"
-msgstr ""
-
-#: seditor.py:290
-msgid "_Open..."
-msgstr ""
-
-#: seditor.py:292
-msgid "Ctrl+O"
-msgstr ""
-
-#: seditor.py:293
-msgid "_Save"
-msgstr ""
-
-#: seditor.py:295
-msgid "Ctrl+S"
-msgstr ""
-
-#: seditor.py:296
-msgid "Save _As..."
-msgstr ""
-
-#: seditor.py:298
-msgid "Ctrl+Shift+S"
-msgstr ""
-
-#: seditor.py:300
-msgid "_Quit"
-msgstr ""
-
-#: seditor.py:302
-msgid "Ctrl+Q"
-msgstr ""
-
 #: seditor.py:306
-msgid "_Edit"
+msgid "[ Modified ]"
 msgstr ""
 
 #: seditor.py:308
-msgid "_Undo"
+msgid "[ Saved ]"
 msgstr ""
 
-#: seditor.py:310
-msgid "Ctrl+Z"
-msgstr ""
-
-#: seditor.py:312
-msgid "Re_do"
-msgstr ""
-
-#: seditor.py:314
-msgid "Ctrl+Shift+Z"
-msgstr ""
-
-#: seditor.py:317
-msgid "Cu_t"
-msgstr ""
-
-#: seditor.py:319
-msgid "Ctrl+X"
-msgstr ""
-
-#: seditor.py:321
-msgid "_Copy"
-msgstr ""
-
-#: seditor.py:323
-msgid "Ctrl+C"
-msgstr ""
-
-#: seditor.py:326
-msgid "_Paste"
-msgstr ""
-
-#: seditor.py:328
-msgid "Ctrl+V"
-msgstr ""
-
-#: seditor.py:332
-msgid "_Find..."
-msgstr ""
-
-#: seditor.py:334
-msgid "Ctrl+F"
-msgstr ""
-
-#: seditor.py:335
-msgid "_Replace..."
-msgstr ""
-
-#: seditor.py:337
-msgid "Ctrl+R"
-msgstr ""
-
-#: seditor.py:339
-msgid "Select _All"
-msgstr ""
-
-#: seditor.py:341
-msgid "Ctrl+A"
-msgstr ""
-
-#: seditor.py:343
-msgid "_Settings..."
-msgstr ""
-
-#: seditor.py:349
-msgid "_Help"
-msgstr ""
-
-#: seditor.py:351
-msgid "_Manual"
-msgstr ""
-
-#: seditor.py:353
-msgid "F1"
+#: seditor.py:311
+msgid "File:  {}  {}"
 msgstr ""
 
 #: seditor.py:355
-msgid "_About"
+msgid "_File"
 msgstr ""
 
-#: seditor.py:358
-msgid "_Copyright"
+#: seditor.py:357
+msgid "_New"
 msgstr ""
 
-#: seditor.py:361
-msgid "_Warranty"
+#: seditor.py:359
+msgid "Ctrl+N"
 msgstr ""
 
-#: seditor.py:370
-msgid "<Control-n>"
+#: seditor.py:360
+msgid "_Open..."
 msgstr ""
 
-#: seditor.py:371
-msgid "<Control-o>"
+#: seditor.py:362
+msgid "Ctrl+O"
+msgstr ""
+
+#: seditor.py:363
+msgid "_Save"
+msgstr ""
+
+#: seditor.py:365
+msgid "Ctrl+S"
+msgstr ""
+
+#: seditor.py:366
+msgid "Save _As..."
+msgstr ""
+
+#: seditor.py:368
+msgid "Ctrl+Shift+S"
+msgstr ""
+
+#: seditor.py:369
+msgid "Save _To..."
 msgstr ""
 
 #: seditor.py:372
-msgid "<Control-s>"
-msgstr ""
-
-#: seditor.py:373
-msgid "<Control-S>"
+msgid "_Quit"
 msgstr ""
 
 #: seditor.py:374
-msgid "<Control-q>"
-msgstr ""
-
-#: seditor.py:377
-msgid "<Control-f>"
+msgid "Ctrl+Q"
 msgstr ""
 
 #: seditor.py:378
-msgid "<Control-r>"
+msgid "_Edit"
 msgstr ""
 
-#: seditor.py:379
-msgid "<Control-a>"
+#: seditor.py:380
+msgid "_Undo"
 msgstr ""
 
 #: seditor.py:382
+msgid "Ctrl+Z"
+msgstr ""
+
+#: seditor.py:384
+msgid "Re_do"
+msgstr ""
+
+#: seditor.py:386
+msgid "Ctrl+Shift+Z"
+msgstr ""
+
+#: seditor.py:389
+msgid "Cu_t"
+msgstr ""
+
+#: seditor.py:391
+msgid "Ctrl+X"
+msgstr ""
+
+#: seditor.py:393
+msgid "_Copy"
+msgstr ""
+
+#: seditor.py:395
+msgid "Ctrl+C"
+msgstr ""
+
+#: seditor.py:398
+msgid "_Paste"
+msgstr ""
+
+#: seditor.py:400
+msgid "Ctrl+V"
+msgstr ""
+
+#: seditor.py:404
+msgid "_Find..."
+msgstr ""
+
+#: seditor.py:406
+msgid "Ctrl+F"
+msgstr ""
+
+#: seditor.py:407
+msgid "_Replace..."
+msgstr ""
+
+#: seditor.py:409
+msgid "Ctrl+R"
+msgstr ""
+
+#: seditor.py:411
+msgid "Select _All"
+msgstr ""
+
+#: seditor.py:413
+msgid "Ctrl+A"
+msgstr ""
+
+#: seditor.py:415
+msgid "_Settings..."
+msgstr ""
+
+#: seditor.py:421
+msgid "_Help"
+msgstr ""
+
+#: seditor.py:423
+msgid "_Manual"
+msgstr ""
+
+#: seditor.py:425
+msgid "F1"
+msgstr ""
+
+#: seditor.py:427
+msgid "_About"
+msgstr ""
+
+#: seditor.py:430
+msgid "_Copyright"
+msgstr ""
+
+#: seditor.py:433
+msgid "_Warranty"
+msgstr ""
+
+#: seditor.py:442
+msgid "<Control-n>"
+msgstr ""
+
+#: seditor.py:443
+msgid "<Control-o>"
+msgstr ""
+
+#: seditor.py:444
+msgid "<Control-s>"
+msgstr ""
+
+#: seditor.py:445
+msgid "<Control-S>"
+msgstr ""
+
+#: seditor.py:446
+msgid "<Control-q>"
+msgstr ""
+
+#: seditor.py:449
+msgid "<Control-f>"
+msgstr ""
+
+#: seditor.py:450
+msgid "<Control-r>"
+msgstr ""
+
+#: seditor.py:451
+msgid "<Control-a>"
+msgstr ""
+
+#: seditor.py:454
 msgid "<F1>"
 msgstr ""
 
-#: segpg.py:70 segpg.py:86
+#: segpg.py:69 segpg.py:92 segpg.py:108 segpg.py:124
 msgid "Could not execute GnuPG."
 msgstr ""
 
-#: semessage.py:61
+#: segpg.py:83
+msgid "At least one recipient must be given."
+msgstr ""
+
+#: semessage.py:61 sesearch.py:66
 msgid "Close"
+msgstr ""
+
+#: serecipients.py:51
+msgid "Select GnuPG recipients:"
+msgstr ""
+
+#: serecipients.py:57
+msgid "Clear All"
+msgstr ""
+
+#: serecipients.py:58
+msgid "Select All"
+msgstr ""
+
+#: serecipients.py:59 sesettings.py:90
+msgid "Cancel"
+msgstr ""
+
+#: serecipients.py:60 sesettings.py:92
+msgid "Ok"
 msgstr ""
 
 #: sesearch.py:51
 msgid "Find text:"
 msgstr ""
 
-#: sesearch.py:59
+#: sesearch.py:60
 msgid "Replace with:"
 msgstr ""
 
-#: sesearch.py:82
+#: sesearch.py:68
+msgid "Search"
+msgstr ""
+
+#: sesearch.py:89
 msgid "Replace text"
 msgstr ""
 
-#: sesearch.py:83
+#: sesearch.py:90
 msgid "Replace current selection?"
 msgstr ""
 
-#: sesearch.py:93
+#: sesearch.py:100
 msgid "Text not found."
 msgstr ""
 
-#: sesearch.py:94
+#: sesearch.py:101
 msgid "Go to top of document?"
 msgstr ""
 
-#: sesettings.py:59
+#: sesettings.py:62
 msgid "Text color:"
 msgstr ""
 
-#: sesettings.py:66
+#: sesettings.py:69
 msgid "Background color:"
 msgstr ""
 
-#: sesettings.py:72
+#: sesettings.py:75
 msgid "GnuPG path:"
 msgstr ""
 
-#: sesettings.py:85
+#: sesettings.py:81
+msgid "GnuPG default recipients:"
+msgstr ""
+
+#: sesettings.py:102
 msgid "Text color"
 msgstr ""
 
-#: sesettings.py:97
+#: sesettings.py:114
 msgid "Background color"
 msgstr ""
 
-#: sesettings.py:108
+#: sesettings.py:125
 msgid "GnuPG path"
+msgstr ""
+
+#: setext.py:51
+msgid "[ New secure text file ]"
 msgstr ""
 
 #: setext.py:61
@@ -365,9 +427,19 @@ msgid ""
 "\n"
 "----\n"
 "\n"
-"SSTE is a simple-text editor that stores the files encrypted by GnuPG with its\n"
-"default symmetric algorithm.  It depends on GnuPG and Python 3 with Tkinter.\n"
+"SSTE is a text editor (simple text) that stores the files encrypted\n"
+"by GnuPG, either with a symmetric encryption key or [several] public keys.\n"
 "\n"
+"Encryption with public keys allows the sharing of an encrypted text document\n"
+"by a group of people without the need to share a common password, encrypting the\n"
+"document with the public keys of all people who needs access it. Encryption with\n"
+"public keys is also convenient for a single user, as it doesn't require a\n"
+"password input at saving the documents, only for opening.\n"
+"\n"
+"Encryption with symmetric keys, the default, must be used when at least one of\n"
+"the users doesn't have a GnuPG private/public key pair.\n"
+"\n"
+"Depends on Python 3.4+, with Tkinter, and GnuPG 2.\n"
 "\n"
 "Installation and first run\n"
 "==========================\n"
@@ -392,9 +464,11 @@ msgid ""
 "=====\n"
 "\n"
 "The program works as any common graphical simple-text editor.  You may insert,\n"
-"delete, select, copy and paste text as usual.  When saving you will be prompted\n"
+"delete, select, copy and paste text as usual.  When saving, you will be prompted\n"
 "to insert and confirm a password to encrypt the file.  Similarly, when opening\n"
-"a file the program will ask for a password to decrypt the file.\n"
+"a file the program will ask for a password to decrypt the file.  If public keys\n"
+"are used to encrypt the file, the password to the keys will only be asked when\n"
+"opening the file.\n"
 "\n"
 "Below is a description of the menu items and its actions:\n"
 "\n"
@@ -405,14 +479,23 @@ msgid ""
 "       modified since the last save you will be prompted to save it.\n"
 "\n"
 "* Open: open a saved file.  When prompted insert the password used to encrypt\n"
-"        the file and press 'ENTER'.  Press 'ESCAPE' to stay editing the same\n"
-"        file.\n"
+"        the file or to open the private key to decrypt it.\n"
 "\n"
-"* Save: save the current file.  Insert the password to encrypt the file,\n"
-"        confirm it and then press 'ENTER' to save the file.  Press 'ESCAPE'\n"
-"        to cancel.\n"
+"* Save: save the current file. If you are using symmetric encryption, which is\n"
+"        the default, enter the secret password to encrypt the file when\n"
+"        prompted.\n"
 "\n"
 "* Save as: save the current file with a different name.\n"
+"\n"
+"* Save to: save the current file encrypted for a selected list of GnuPG\n"
+"           recipients (using its public keys). Select all the intended\n"
+"           recipients in the list and press 'Ok'. Only recipients in the\n"
+"           default keyring and with valid public keys are shown.  Be sure to\n"
+"           always select your public, in addition to the keys of all other\n"
+"           recipients that need to access the file. If you forget to add your\n"
+"           public key, you won't be able to open the file yourself, as\n"
+"           only the users with the private keys corresponding to the chosen\n"
+"           public keys can decrypt the file.\n"
 "\n"
 "* Quit: close the program.  You will be prompted to save the file if it has\n"
 "        changed since the last save.\n"
@@ -442,16 +525,21 @@ msgid ""
 "\n"
 "* Select all: select all text in the editor.\n"
 "\n"
-"* Settings: change the settings of the editor.  When finished, press 'ENTER'\n"
-"            to activate changes and close the dialog or 'ESCAPE' to reset the\n"
-"            changes.  Available options:\n"
+"* Settings: change the settings of the editor. Available options:\n"
 "\n"
 "    * Text color: change the color of the text. Click the button to open the\n"
-"                  color choosing dialog.\n"
+"            color choosing dialog.\n"
 "    * Background color: change the background (paper) color.  Click the button\n"
-"                        to open the color choosing dialog.\n"
+"            to open the color choosing dialog.\n"
 "    * GnuPG path: choose the correct path to the GnuPG executable.  Click the\n"
-"                  button to open the file dialog.\n"
+"            button to open the file dialog.\n"
+"    * GnuPG default recipients. Click the button to open the recipients dialog.\n"
+"            The default recipients (may be just one) are the public keys that\n"
+"            will be used to encrypt all the files at saving time, except if\n"
+"            using the 'Save To' option. Be sure to always select your public\n"
+"            key, or you won't be able to open the file -- only the users with\n"
+"            the corresponding private keys to the chosen public keys can decrypt\n"
+"            the file.\n"
 "\n"
 "Help menu\n"
 "---------\n"
@@ -465,23 +553,23 @@ msgid ""
 "* Warranty: display the warranty information.\n"
 msgstr ""
 
-#: sste.py:66
+#: sste.py:67
 msgid "file to open"
 msgstr ""
 
-#: sste.py:69
+#: sste.py:70
 msgid "GnuPG command, including complete path if not on PATH"
 msgstr ""
 
-#: sste.py:72
+#: sste.py:73
 msgid "show copyright information."
 msgstr ""
 
-#: sste.py:75
+#: sste.py:76
 msgid "show warranty information."
 msgstr ""
 
-#: sste.py:78
+#: sste.py:79
 msgid "show version information."
 msgstr ""
 

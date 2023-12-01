@@ -17,8 +17,8 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
 """
 
-__version__ = '0.3'
-__date__ = '2023-11-13'
+__version__ = '1.0'
+__date__ = '2023-11-28'
 __license__ ='GNU General Public License version 3'
 __author__ = 'António Manuel Dias <ammdias@gmail.com>'
 
@@ -28,8 +28,9 @@ from tkinter import ttk
 from tkinter import colorchooser
 from tkinter import filedialog
 
-from setext import SSTE_NAME
-from setext import _
+from segpg import keyIds
+from serecipients import RecipientsDialog
+from setext import _, SSTE_NAME
 
 
 #------------------------------------------------------------------------------
@@ -55,25 +56,41 @@ class SettingsDialog(Toplevel):
         self._bgcolor.set(self.config['bgcolor'])
         self._gnupg = StringVar()
         self._gnupg.set(self.config['gnupg'])
+        self._gpgrcpts = StringVar()
+        self._gpgrcpts.set(', '.join(self.config['gpgrcpts']))
 
         d = ttk.Label(self, text=_('Text color:'))
         d.grid(column=0, row=0, sticky=W, padx=2, pady=2)
         b = ttk.Button(self, width=25, textvariable=self._fgcolor,
                        command=self.onFGColor)
-        b.grid(column=1, row=0, sticky=(W,E), padx=2, pady=2)
+        b.grid(column=1, row=0, columnspan=2, sticky=(W,E), padx=2, pady=2)
         b.focus()
 
         d = ttk.Label(self, text=_('Background color:'))
         d.grid(column=0, row=1, sticky=W, padx=2, pady=2)
         b = ttk.Button(self, width=25, textvariable=self._bgcolor,
                        command=self.onBGColor)
-        b.grid(column=1, row=1, sticky=(W,E), padx=2, pady=2)
+        b.grid(column=1, row=1, columnspan=2, sticky=(W,E), padx=2, pady=2)
 
         d = ttk.Label(self, text=_('GnuPG path:'))
         d.grid(column=0, row=2, sticky=W, padx=2, pady=2)
         b = ttk.Button(self, width=25, textvariable=self._gnupg,
                        command=self.onGnuPG)
-        b.grid(column=1, row=2, sticky=(W,E), padx=2, pady=2)
+        b.grid(column=1, row=2, columnspan=2, sticky=(W,E), padx=2, pady=2)
+
+        d = ttk.Label(self, text=_('GnuPG default recipients:'))
+        d.grid(column=0, row=3, sticky=W, padx=2, pady=2)
+        b = ttk.Button(self, width=25, textvariable=self._gpgrcpts,
+                       command=self.onRecipients)
+        b.grid(column=1, row=3, columnspan=2, sticky=(W,E), padx=2, pady=2)
+
+        sep = ttk.Separator(self, orient=HORIZONTAL)
+        sep.grid(row=4, columnspan=3, sticky=(W,E), padx=5, pady=5)
+
+        cancel = ttk.Button(self, text=_('Cancel'), command=self.onCancel)
+        cancel.grid(row=5, column=1, sticky=(W, E), padx=2, pady=5)
+        ok = ttk.Button(self, text=_('Ok'), command=self.onOk)
+        ok.grid(row=5, column=2, sticky=(W, E), padx=2, pady=5)
 
         self.bind('<Return>', self.onOk)
         self.bind('<Escape>', self.onCancel)
@@ -110,6 +127,21 @@ class SettingsDialog(Toplevel):
         if p:
             self.config['gnupg'] = p 
             self._gnupg.set(self.config['gnupg'])
+
+
+    def onRecipients(self, *args):
+        '''Choose GnuPG default recipients.
+        '''
+        settings = {
+                'recipients': keyIds(self.config['gnupg']),
+                'selected': self.config['gpgrcpts']
+        }
+        rd = RecipientsDialog(self, settings)
+        self.wait_window(rd)
+
+        if settings['selected'] is not None:
+            self.config['gpgrcpts'] = settings['selected']
+            self._gpgrcpts.set(', '.join(self.config['gpgrcpts']))
 
 
     def onOk(self, *args):

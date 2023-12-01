@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: 0.3\n"
-"POT-Creation-Date: 2023-11-14 16:41+0000\n"
-"PO-Revision-Date: 2023-11-14 20:00+WET\n"
-"Last-Translator: Antńio Manuel Dias <ammdias@gmail.com>\n"
+"Project-Id-Version: 1.0\n"
+"POT-Creation-Date: 2023-12-01 22:20+0000\n"
+"PO-Revision-Date: 2023-12-01 22:25+WET\n"
+"Last-Translator: António Manuel Dias <ammdias@gmail.com>\n"
 "Language-Team: pt_PT <ammdias>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -15,15 +15,27 @@ msgstr ""
 "Generated-By: pygettext.py 1.5\n"
 
 
-#: seditor.py:214
+#: seditor.py:226
+msgid ""
+"Could not find GnuPG in the PATH.\n"
+"Please configure it manually."
+msgstr ""
+"Não foi possível encontrar o GnuPG no PATH.\n"
+"Por favor, configure-o manualmente."
+
+#: seditor.py:236
 msgid "Error"
 msgstr "Erro"
 
-#: seditor.py:231
+#: seditor.py:252
+msgid "Close document"
+msgstr "Fechar documento"
+
+#: seditor.py:253
 msgid "File has changed. Do you want to save it?"
 msgstr "O ficheiro foi alterado. Deseja guardá-lo?"
 
-#: seditor.py:245 seditor.py:265
+#: seditor.py:267 seditor.py:293
 msgid ""
 "GnuPG error:\n"
 "{}"
@@ -31,237 +43,289 @@ msgstr ""
 "Erro no GnuPG:\n"
 "{}"
 
-#: seditor.py:285
+#: seditor.py:306
+msgid "[ Modified ]"
+msgstr "[ Modificado ]"
+
+#: seditor.py:308
+msgid "[ Saved ]"
+msgstr "[ Guardado ]"
+
+#: seditor.py:311
+msgid "File:  {}  {}"
+msgstr "Ficheiro:  {}  {}"
+
+#: seditor.py:355
 msgid "_File"
 msgstr "_Ficheiro"
 
-#: seditor.py:287
+#: seditor.py:357
 msgid "_New"
 msgstr "_Novo"
 
-#: seditor.py:289
+#: seditor.py:321
 msgid "Ctrl+N"
 msgstr "Ctrl+N"
 
-#: seditor.py:290
+#: seditor.py:360
 msgid "_Open..."
 msgstr "_Abrir..."
 
-#: seditor.py:292
+#: seditor.py:362
 msgid "Ctrl+O"
 msgstr "Ctrl+O"
 
-#: seditor.py:293
+#: seditor.py:363
 msgid "_Save"
 msgstr "_Guardar"
 
-#: seditor.py:295
+#: seditor.py:365
 msgid "Ctrl+S"
 msgstr "Ctrl+S"
 
-#: seditor.py:296
+#: seditor.py:366
 msgid "Save _As..."
 msgstr "Guardar _Como..."
 
-#: seditor.py:298
+#: seditor.py:368
 msgid "Ctrl+Shift+S"
 msgstr "Ctrl+Shift+S"
 
-#: seditor.py:300
+#: seditor.py:369
+msgid "Save _To..."
+msgstr "Guardar _Para..."
+
+#: seditor.py:372
 msgid "_Quit"
 msgstr "Sai_r"
 
-#: seditor.py:302
+#: seditor.py:374
 msgid "Ctrl+Q"
 msgstr "Ctrl+Q"
 
-#: seditor.py:306
+#: seditor.py:378
 msgid "_Edit"
 msgstr "_Editar"
 
-#: seditor.py:308
+#: seditor.py:380
 msgid "_Undo"
 msgstr "_Desfazer"
 
-#: seditor.py:310
+#: seditor.py:382
 msgid "Ctrl+Z"
 msgstr "Ctrl+Z"
 
-#: seditor.py:312
+#: seditor.py:384
 msgid "Re_do"
 msgstr "_Refazer"
 
-#: seditor.py:314
+#: seditor.py:386
 msgid "Ctrl+Shift+Z"
 msgstr "Ctrl+Shift+Z"
 
-#: seditor.py:317
+#: seditor.py:389
 msgid "Cu_t"
 msgstr "Cort_ar"
 
-#: seditor.py:319
+#: seditor.py:391
 msgid "Ctrl+X"
 msgstr "Ctrl+X"
 
-#: seditor.py:321
+#: seditor.py:393
 msgid "_Copy"
 msgstr "_Copiar"
 
-#: seditor.py:323
+#: seditor.py:395
 msgid "Ctrl+C"
 msgstr "Ctrl+C"
 
-#: seditor.py:326
+#: seditor.py:398
 msgid "_Paste"
 msgstr "Co_lar"
 
-#: seditor.py:328
+#: seditor.py:400
 msgid "Ctrl+V"
 msgstr "Ctrl+V"
 
-#: seditor.py:332
+#: seditor.py:404
 msgid "_Find..."
 msgstr "_Procurar..."
 
-#: seditor.py:334
+#: seditor.py:406
 msgid "Ctrl+F"
 msgstr "Ctrl+F"
 
-#: seditor.py:335
+#: seditor.py:407
 msgid "_Replace..."
 msgstr "_Substituir..."
 
-#: seditor.py:337
+#: seditor.py:409
 msgid "Ctrl+R"
 msgstr ""
 
-#: seditor.py:339
+#: seditor.py:411
 msgid "Select _All"
 msgstr "Selecionar _Tudo"
 
-#: seditor.py:341
+#: seditor.py:413
 msgid "Ctrl+A"
 msgstr "Ctrl+A"
 
-#: seditor.py:343
+#: seditor.py:415
 msgid "_Settings..."
 msgstr "C_onfiguração..."
 
-#: seditor.py:349
+#: seditor.py:421
 msgid "_Help"
 msgstr "_Ajuda"
 
-#: seditor.py:351
+#: seditor.py:423
 msgid "_Manual"
 msgstr "_Manual"
 
-#: seditor.py:353
+#: seditor.py:425
 msgid "F1"
 msgstr "F1"
 
-#: seditor.py:355
+#: seditor.py:427
 msgid "_About"
 msgstr "_Sobre"
 
-#: seditor.py:358
+#: seditor.py:430
 msgid "_Copyright"
 msgstr "_Licença"
 
-#: seditor.py:361
+#: seditor.py:433
 msgid "_Warranty"
 msgstr "_Garantia"
 
-#: seditor.py:370
+#: seditor.py:442
 msgid "<Control-n>"
 msgstr "<Control-n>"
 
-#: seditor.py:371
+#: seditor.py:443
 msgid "<Control-o>"
 msgstr "<Control-o>"
 
-#: seditor.py:372
+#: seditor.py:444
 msgid "<Control-s>"
 msgstr "<Control-s>"
 
-#: seditor.py:373
+#: seditor.py:445
 msgid "<Control-S>"
 msgstr "<Control-S>"
 
-#: seditor.py:374
+#: seditor.py:446
 msgid "<Control-q>"
 msgstr "<Control-q>"
 
-#: seditor.py:377
+#: seditor.py:449
 msgid "<Control-f>"
 msgstr "<Control-f>"
 
-#: seditor.py:378
+#: seditor.py:450
 msgid "<Control-r>"
 msgstr "<Control-r>"
 
-#: seditor.py:379
+#: seditor.py:451
 msgid "<Control-a>"
 msgstr "<Control-a>"
 
-#: seditor.py:382
+#: seditor.py:454
 msgid "<F1>"
 msgstr "<F1>"
 
-#: segpg.py:70 segpg.py:86
+#: segpg.py:69 segpg.py:92 segpg.py:108 segpg.py:124
 msgid "Could not execute GnuPG."
 msgstr "Não foi possível executar o GnuPG."
 
-#: semessage.py:61
+#: segpg.py:83
+msgid "At least one recipient must be given."
+msgstr "Tem de fornecer pelo menos um destinatário."
+
+#: semessage.py:61 sesearch.py:66
 msgid "Close"
 msgstr "Fechar"
+
+#: serecipients.py:51
+msgid "Select GnuPG recipients:"
+msgstr "Selecionar destinatários GnuPG:"
+
+#: serecipients.py:57
+msgid "Clear All"
+msgstr "Limpar Seleção"
+
+#: serecipients.py:58
+msgid "Select All"
+msgstr "Selecionar Tudo"
+
+#: serecipients.py:59 sesettings.py:90
+msgid "Cancel"
+msgstr "Cancelar"
+
+#: serecipients.py:60 sesettings.py:92
+msgid "Ok"
+msgstr "Ok"
 
 #: sesearch.py:51
 msgid "Find text:"
 msgstr "Texto a procurar:"
 
-#: sesearch.py:59
+#: sesearch.py:60
 msgid "Replace with:"
 msgstr "Substituir por:"
 
-#: sesearch.py:82
+#: sesearch.py:68
+msgid "Search"
+msgstr "Procurar"
+
+#: sesearch.py:89
 msgid "Replace text"
 msgstr "Substituir texto"
 
-#: sesearch.py:83
+#: sesearch.py:90
 msgid "Replace current selection?"
 msgstr "Substituir o texto selecionado?"
 
-#: sesearch.py:93
+#: sesearch.py:100
 msgid "Text not found."
 msgstr "Texto não encontrado."
 
-#: sesearch.py:94
+#: sesearch.py:101
 msgid "Go to top of document?"
 msgstr "Ir para o início do documento?"
 
-#: sesettings.py:59
+#: sesettings.py:62
 msgid "Text color:"
 msgstr "Cor do texto:"
 
-#: sesettings.py:66
+#: sesettings.py:69
 msgid "Background color:"
 msgstr "Cor do fundo:"
 
-#: sesettings.py:72
+#: sesettings.py:75
 msgid "GnuPG path:"
 msgstr "Localização do GnuPG:"
 
-#: sesettings.py:85
+#: sesettings.py:81
+msgid "GnuPG default recipients:"
+msgstr "Destinatários GnuPG configurados:"
+
+#: sesettings.py:102
 msgid "Text color"
 msgstr "Cor do texto"
 
-#: sesettings.py:97
+#: sesettings.py:114
 msgid "Background color"
 msgstr "Cor do fundo"
 
-#: sesettings.py:108
+#: sesettings.py:125
 msgid "GnuPG path"
 msgstr "Localização do GnuPG"
+
+#: setext.py:51
+msgid "[ New secure text file ]"
+msgstr "[ Novo ficheiro de texto seguro ]"
 
 #: setext.py:61
 msgid ""
@@ -442,9 +506,19 @@ msgid ""
 "\n"
 "----\n"
 "\n"
-"SSTE is a simple-text editor that stores the files encrypted by GnuPG with its\n"
-"default symmetric algorithm.  It depends on GnuPG and Python 3 with Tkinter.\n"
+"SSTE is a text editor (simple text) that stores the files encrypted\n"
+"by GnuPG, either with a symmetric encryption key or [several] public keys.\n"
 "\n"
+"Encryption with public keys allows the sharing of an encrypted text document\n"
+"by a group of people without the need to share a common password, encrypting the\n"
+"document with the public keys of all people who needs access it. Encryption with\n"
+"public keys is also convenient for a single user, as it doesn't require a\n"
+"password input at saving the documents, only for opening.\n"
+"\n"
+"Encryption with symmetric keys, the default, must be used when at least one of\n"
+"the users doesn't have a GnuPG private/public key pair.\n"
+"\n"
+"Depends on Python 3.4+, with Tkinter, and GnuPG 2.\n"
 "\n"
 "Installation and first run\n"
 "==========================\n"
@@ -469,9 +543,11 @@ msgid ""
 "=====\n"
 "\n"
 "The program works as any common graphical simple-text editor.  You may insert,\n"
-"delete, select, copy and paste text as usual.  When saving you will be prompted\n"
+"delete, select, copy and paste text as usual.  When saving, you will be prompted\n"
 "to insert and confirm a password to encrypt the file.  Similarly, when opening\n"
-"a file the program will ask for a password to decrypt the file.\n"
+"a file the program will ask for a password to decrypt the file.  If public keys\n"
+"are used to encrypt the file, the password to the keys will only be asked when\n"
+"opening the file.\n"
 "\n"
 "Below is a description of the menu items and its actions:\n"
 "\n"
@@ -482,14 +558,23 @@ msgid ""
 "       modified since the last save you will be prompted to save it.\n"
 "\n"
 "* Open: open a saved file.  When prompted insert the password used to encrypt\n"
-"        the file and press 'ENTER'.  Press 'ESCAPE' to stay editing the same\n"
-"        file.\n"
+"        the file or to open the private key to decrypt it.\n"
 "\n"
-"* Save: save the current file.  Insert the password to encrypt the file,\n"
-"        confirm it and then press 'ENTER' to save the file.  Press 'ESCAPE'\n"
-"        to cancel.\n"
+"* Save: save the current file. If you are using symmetric encryption, which is\n"
+"        the default, enter the secret password to encrypt the file when\n"
+"        prompted.\n"
 "\n"
 "* Save as: save the current file with a different name.\n"
+"\n"
+"* Save to: save the current file encrypted for a selected list of GnuPG\n"
+"           recipients (using its public keys). Select all the intended\n"
+"           recipients in the list and press 'Ok'. Only recipients in the\n"
+"           default keyring and with valid public keys are shown.  Be sure to\n"
+"           always select your public, in addition to the keys of all other\n"
+"           recipients that need to access the file. If you forget to add your\n"
+"           public key, you won't be able to open the file yourself, as\n"
+"           only the users with the private keys corresponding to the chosen\n"
+"           public keys can decrypt the file.\n"
 "\n"
 "* Quit: close the program.  You will be prompted to save the file if it has\n"
 "        changed since the last save.\n"
@@ -519,16 +604,21 @@ msgid ""
 "\n"
 "* Select all: select all text in the editor.\n"
 "\n"
-"* Settings: change the settings of the editor.  When finished, press 'ENTER'\n"
-"            to activate changes and close the dialog or 'ESCAPE' to reset the\n"
-"            changes.  Available options:\n"
+"* Settings: change the settings of the editor. Available options:\n"
 "\n"
 "    * Text color: change the color of the text. Click the button to open the\n"
-"                  color choosing dialog.\n"
+"            color choosing dialog.\n"
 "    * Background color: change the background (paper) color.  Click the button\n"
-"                        to open the color choosing dialog.\n"
+"            to open the color choosing dialog.\n"
 "    * GnuPG path: choose the correct path to the GnuPG executable.  Click the\n"
-"                  button to open the file dialog.\n"
+"            button to open the file dialog.\n"
+"    * GnuPG default recipients. Click the button to open the recipients dialog.\n"
+"            The default recipients (may be just one) are the public keys that\n"
+"            will be used to encrypt all the files at saving time, except if\n"
+"            using the 'Save To' option. Be sure to always select your public\n"
+"            key, or you won't be able to open the file -- only the users with\n"
+"            the corresponding private keys to the chosen public keys can decrypt\n"
+"            the file.\n"
 "\n"
 "Help menu\n"
 "---------\n"
@@ -545,7 +635,7 @@ msgstr ""
 "Secure Simple Text Editor\n"
 "\n"
 "Copyright (C) 2019 António Manuel Dias\n"
-"contact: ammdias@gmail.com\n"
+"contacto: ammdias@gmail.com\n"
 "\n"
 "Este programa é distribuído SEM QUALQUER GARANTIA;  para mais detalhes use o\n"
 "comando 'sste.py --warranty' ou use 'Ajuda > Garantia' na interface\n"
@@ -557,9 +647,21 @@ msgstr ""
 "\n"
 "----\n"
 "\n"
-"O SSTE é editor de texto simples que cifra os ficheiros com o algoritmo de\n"
-"cifra simétrica padrão do GnuPG. Necessita do GnuPG e Python 3 com Tkinter.\n"
+"SSTE é um editor de texto (texto simples) que guarda os ficheiros cifrados\n"
+"pelo GnuPG, usando uma chave simétrica ou chaves públicas.\n"
 "\n"
+"Cifrar com chaves públicas permite a partilha de um documento de texto entre\n"
+"um grupo de pessoas sem a necessidade de partilhar uma senha comum, cifrando\n"
+"o documento com as chaves públicas de todas as pessoas que necessitam de lhe\n"
+"aceder. Cifrar com chave pública é igualmente conveniente para um único\n"
+"utilizador, já que não requere a inserção de uma senha ao gaurdar\n"
+"documentos, apenas para os abrir.\n"
+"\n"
+"Deve cifrar-se com uma chave simétrica, a opção configurada por omissão,\n"
+"quando pelo menos um dos utilizadores não possuir um par de chaves GnuPG\n"
+"pública/privada."
+"\n"
+"Depende de Python 3.4+, com Tkinter, e GnuPG 2.\n"
 "\n"
 "Instalação e primeira execução\n"
 "==============================\n"
@@ -567,9 +669,8 @@ msgstr ""
 "Para instalar basta descomprimir o ficheiro zip, entrar na diretoria criada\n"
 "e correr o programa 'sste.py' com o Python 3.\n"
 "\n"
-"Alternativamente, em Linux ou outros sistemas derivados de Unix, pode usar\n"
-"o script de instalação incluído para instalar o programa para um único\n"
-"utilizador:\n"
+"Em alternativa, em Linux ou outros sistemas derivados de Unix, pode usar\n"
+"o script de instalação incluído para instalar o programa:\n"
 "\n"
 "    $ python3 INSTALL.py\n"
 "\n"
@@ -589,7 +690,8 @@ msgstr ""
 "inserir, apagar, selecionar, copiar e colar texto como habitualmente. Ao\n"
 "guardar ser-lhe-á pedida uma senha e sua confirmação para cifrar o ficheiro.\n"
 "De igual forma, ao abrir um ficheiro o programa pedirá uma senha para o\n"
-"decifrar.\n"
+"decifrar.  Se forem usadas chaves públicas para cifrar o ficheiro, a senha\n"
+"para usar as chaves será pedida apenas ao abrir o ficheiro.\n"
 "\n"
 "Em baixo pode encontrar uma descrição dos itens de menu e suas ações:\n"
 "\n"
@@ -600,15 +702,27 @@ msgstr ""
 "        encontrava a editar tiver sido alterado após a última vez que foi\n"
 "        guardado, ser-lhe-á perguntado se o deseja guardar.\n"
 "\n"
-"* Abrir: abrir um ficheiro guardado.  Insira a senha quando lhe for pedido e\n"
-"         pressione 'ENTER'.  Pressione 'ESCAPE' se desejar continuar a editar\n"
-"         o ficheiro atual.\n"
+"* Abrir: abrir um ficheiro guardado.  Quando pedido, insira a senha usada\n"
+"         para cifrar o ficheiro ou para abrir a chave privada para o\n"
+"         decifrar.\n"
 "\n"
-"* Guardar: guardar o ficheiro atual.  Insira a senha para cifrar o ficheiro,\n"
-"           confirme na caixa abaixo e pressione 'ENTER'.  Pressione 'ESCAPE'\n"
-"           para cancelar.\n"
+"* Guardar: guardar o ficheiro atual.  Se estiver a usar cifra simétrica, o\n"
+"           que é a opção configurada por omissão, insira a senha secreta para\n"
+"           cifrar o ficheiro.\n"
 "\n"
 "* Guardar como: guardar o ficheiro atual com um nome diferente.\n"
+"\n"
+"* Guardar para: guardar o ficheiro atual cifrado para uma lista de destinatários\n"
+"                GnuPG selecionada (usando as suas chaves públicas). Selecione\n"
+"                todos os destinatários pretendidos na lista e pressione 'Ok'.\n"
+"                Apenas os destinatários com chaves públicas válidas no chaveiro\n"
+"                GnuPG serão mostradas.  Assegure-se que inclui sempre a sua\n"
+"                própria chave pública, em conjunto com as de todos os outros\n"
+"                destinatários que necessitam de acesso ao finheiro. Se se\n"
+"                esquecer de selecionar a sua chave pública, não poderá abrir\n"
+"                o ficheiro, já que apenas os utilizadores detendo as chaves\n"
+"                privadas correspondentes às públicas usadas para cifrar o\n"
+"                ficheiro o poderão decifrar.\n"
 "\n"
 "* Sair: fechar o programa.  Ser-lhe-á perguntado se deseja guardar o ficheiro\n"
 "        se este tiver sido alterado desde a última vez que foi guardado.\n"
@@ -633,6 +747,11 @@ msgstr ""
 "            reiniciar a procura a partir do início.  Pressione 'ESCAPE' para\n"
 "            fechar o diálogo.\n"
 "\n"
+"* Substituir: substituir partes do texto no editor.  Insera o texto a procurar\n"
+"              e o texto para o substituir no diálogo e pressione 'ENTER'.  Se\n"
+"              o texto for encontrado, ser-lhe-á perguntado se o deseja\n"
+"              substituir.\n"
+"\n"
 "* Selecionar tudo: selecionar todo o texto no editor.\n"
 "\n"
 "* Configuração: alterar a configuração do editor.  Ao terminar, pressione\n"
@@ -644,8 +763,16 @@ msgstr ""
 "    * Cor do fundo: alterar a cor do fundo.  Clicar no botão para abrir o\n"
 "                    diálogo de escolha de cor.\n"
 "    * Localização do GnuPG: escolher a localização correta do executável do\n"
-"                            GnuPG.  Clicar no botão para abrir o diálogo de\n"
-"                            escolha do ficheiro.\n"
+"                    GnuPG.  Clicar no botão para abrir o diálogo de escolha do\n"
+"                    ficheiro.\n"
+"    * Destinatários GnuPG configurados: clique o botão para abrir o diálogo\n"
+"                de escolha de destinatários. Os destinatários configurados\n"
+"                (pode ser apenas um) são as chaves públicas que serão usadas\n"
+"                para cifrar todos os ficheiros sempre que forem guardados,\n"
+"                excepto quando usada a opção 'Guardar Para'. Assegure-se que\n"
+"                inclui a sua chave pública ou não poderá abrir o ficheiro --\n"
+"                apenas os utilizadores com chaves privadas correspondentes\n"
+"                às chaves públicas escolhidas podem decifrar o ficheiro.\n"
 "\n"
 "Menu Ajuda\n"
 "----------\n"
@@ -658,23 +785,23 @@ msgstr ""
 "\n"
 "* Garantia: mostrar informação sobre a garantia do programa.\n"
 
-#: sste.py:66
+#: sste.py:67
 msgid "file to open"
 msgstr "ficheiro a abrir"
 
-#: sste.py:69
+#: sste.py:70
 msgid "GnuPG command, including complete path if not on PATH"
 msgstr "Comando do GnuPG, incluindo a localização completa se não estiver no PATH"
 
-#: sste.py:72
+#: sste.py:73
 msgid "show copyright information."
 msgstr "mostrar licença de utilização."
 
-#: sste.py:80
+#: sste.py:76
 msgid "show warranty information."
 msgstr "mostrar garantia."
 
-#: sste.py:78
+#: sste.py:79
 msgid "show version information."
 msgstr "mostrar versão da aplicação."
 

@@ -19,8 +19,8 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
 """
 
-__version__ = '0.3'
-__date__ = '2023-11-13'
+__version__ = '1.0'
+__date__ = '2023-12-01'
 __license__ ='GNU General Public License version 3'
 __author__ = 'António Manuel Dias <ammdias@gmail.com>'
 
@@ -50,9 +50,10 @@ for i in config_files:
 CONFIG_FILE = i
 
 DEFAULT_CONFIG = {
-    'gnupg': '',
     'fgcolor': 'black',
-    'bgcolor': 'white'
+    'bgcolor': 'white',
+    'gnupg': '',
+    'gpgrcpts': []
 }
 
 
@@ -101,7 +102,6 @@ else:
         for k in DEFAULT_CONFIG:  # set missing options, if any
             if k not in config:
                 config[k] = DEFAULT_CONFIG[k]
-
     except:
         print(_("Could not load '.config' file.\n"
                 "Starting with default configuration."))
@@ -112,8 +112,10 @@ else:
         config['gnupg'] = args.gnupg
 
     # start the program
-    start(config, args.filename)
+    try:
+        start(config, args.filename)
 
-    # save settings at program exit
-    open(CONFIG_FILE, 'w').write(json.dumps(config, indent=4))
-
+        # save settings at program exit
+        open(CONFIG_FILE, 'w').write(json.dumps(config, indent=4))
+    except KeyboardInterrupt:
+        pass

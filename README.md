@@ -1,6 +1,6 @@
 Secure Simple Text Editor
 =========================
-version 0.3
+version 1.0
 
 Copyright (C) 2019 António Manuel Dias
 
@@ -22,17 +22,24 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 
-ABOUT THE PROGRAM
-=================
+## ABOUT THE PROGRAM
 
 This is a text editor (simple text) that stores the files encrypted
-by GnuPG (default symmetric encryption).
+by GnuPG, either with a symmetric encryption key or [several] public keys.
+
+Encryption with public keys allows the sharing of an encrypted text document
+by a group of people without the need to share a common password, encrypting the
+document with the public keys of all people who needs access it. Encryption with
+public keys is also convenient for a single user, as it doesn't require a
+password input at saving the documents, only for opening.
+
+Encryption with symmetric keys, the default, must be used when at least one of
+the users doesn't have a GnuPG private/public key pair.
 
 Depends on Python 3.4+, with Tkinter, and GnuPG 2.
 
 
-INSTALLATION (any system)
-=========================
+## INSTALLATION (any system)
 
 Before using, confirm that you have GnuPG and Python 3 with Tkinter installed
 on your system.  If not, get them from your system's software store or from
@@ -46,8 +53,7 @@ file and run 'sste.py' with Python 3.  Read the program's help for further
 instructions on how to use it.
 
 
-INSTALLATION (Linux systems)
-============================
+## INSTALLATION (Linux systems)
 
 You may properly install the program on a Linux system executing the provided
 installation script, following these instructions:
@@ -93,8 +99,7 @@ installation script, following these instructions:
    Then, find the program in your desktop environment start menu and run it.
 
 
-BUILD A NEW LOCALE
-==================
+## BUILD A NEW LOCALE (for localizers)
 
 * Install gettext package:
 
@@ -114,3 +119,8 @@ BUILD A NEW LOCALE
   Translate the file (see locales/pt_PT for example) and then:
   
         $ msgfmt -o sste.mo sste
+        
+  Test the translation:
+  
+        $ cd ../../..
+        $ LC_ALL=lo_LO.utf8 python3 sste.py

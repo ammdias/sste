@@ -5,6 +5,14 @@ Secure Simple Text Editor
 
 Changes list:
 
+    * 1.0: Possibility of saving with GnuPG public keys.
+           Settings now include default GnuPG recipients.
+           New status bar displaying file name and its saved status.
+           All dialogs now have Cancel/Ok buttons.
+           GnuPG version is no longer printed to terminal on start.
+           Fixed some strings to be locale aware.
+           Updated README.
+ 
     * 0.3: Fixed bug that inserted newlines on saving.
            File operations handled by GnuPG.
            New installation script.

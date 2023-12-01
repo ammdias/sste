@@ -17,8 +17,8 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 """
 
-__version__ = '0.3'
-__date__ = '2023-11-13'
+__version__ = '1.0'
+__date__ = '2023-12-01'
 __license__ ='GNU General Public License version 3'
 __author__ = 'António Manuel Dias <ammdias@gmail.com>'
 
@@ -48,15 +48,15 @@ def labelUnderline(label):
 #------------------------------------------------------------------------------
 # Defaults text
 
-DEFAULT_FILENAME = 'Secure text file'
+DEFAULT_FILENAME = _('[ New secure text file ]')
 
 
 #------------------------------------------------------------------------------
 # Legal stuff constants
 
 SSTE_NAME = 'Secure Simple Text Editor'
-SSTE_VERSION = '0.3'
-SSTE_WEBSITE = 'https://ammdias.duckdns.org/downloads'
+SSTE_VERSION = '1.0'
+SSTE_WEBSITE = 'https://github.com/ammdias/sste'
 SSTE_WEBSITE_LABEL = 'AMMDIAS'
 SSTE_SHORT_COPYRIGHT = _('''Editor for secure (encrypted) simple text files
 (C) 2019 António Manuel Dias
@@ -157,9 +157,19 @@ the graphical user interface for details.
 
 ----
 
-SSTE is a simple-text editor that stores the files encrypted by GnuPG with its
-default symmetric algorithm.  It depends on GnuPG and Python 3 with Tkinter.
+SSTE is a text editor (simple text) that stores the files encrypted
+by GnuPG, either with a symmetric encryption key or [several] public keys.
 
+Encryption with public keys allows the sharing of an encrypted text document
+by a group of people without the need to share a common password, encrypting the
+document with the public keys of all people who needs access it. Encryption with
+public keys is also convenient for a single user, as it doesn't require a
+password input at saving the documents, only for opening.
+
+Encryption with symmetric keys, the default, must be used when at least one of
+the users doesn't have a GnuPG private/public key pair.
+
+Depends on Python 3.4+, with Tkinter, and GnuPG 2.
 
 Installation and first run
 ==========================
@@ -184,9 +194,11 @@ Usage
 =====
 
 The program works as any common graphical simple-text editor.  You may insert,
-delete, select, copy and paste text as usual.  When saving you will be prompted
+delete, select, copy and paste text as usual.  When saving, you will be prompted
 to insert and confirm a password to encrypt the file.  Similarly, when opening
-a file the program will ask for a password to decrypt the file.
+a file the program will ask for a password to decrypt the file.  If public keys
+are used to encrypt the file, the password to the keys will only be asked when
+opening the file.
 
 Below is a description of the menu items and its actions:
 
@@ -197,14 +209,23 @@ File menu
        modified since the last save you will be prompted to save it.
 
 * Open: open a saved file.  When prompted insert the password used to encrypt
-        the file and press 'ENTER'.  Press 'ESCAPE' to stay editing the same
-        file.
+        the file or to open the private key to decrypt it.
 
-* Save: save the current file.  Insert the password to encrypt the file,
-        confirm it and then press 'ENTER' to save the file.  Press 'ESCAPE'
-        to cancel.
+* Save: save the current file. If you are using symmetric encryption, which is
+        the default, enter the secret password to encrypt the file when
+        prompted.
 
 * Save as: save the current file with a different name.
+
+* Save to: save the current file encrypted for a selected list of GnuPG
+           recipients (using its public keys). Select all the intended
+           recipients in the list and press 'Ok'. Only recipients in the
+           default keyring and with valid public keys are shown.  Be sure to
+           always select your public, in addition to the keys of all other
+           recipients that need to access the file. If you forget to add your
+           public key, you won't be able to open the file yourself, as
+           only the users with the private keys corresponding to the chosen
+           public keys can decrypt the file.
 
 * Quit: close the program.  You will be prompted to save the file if it has
         changed since the last save.
@@ -234,16 +255,21 @@ Edit menu
 
 * Select all: select all text in the editor.
 
-* Settings: change the settings of the editor.  When finished, press 'ENTER'
-            to activate changes and close the dialog or 'ESCAPE' to reset the
-            changes.  Available options:
+* Settings: change the settings of the editor. Available options:
 
     * Text color: change the color of the text. Click the button to open the
-                  color choosing dialog.
+            color choosing dialog.
     * Background color: change the background (paper) color.  Click the button
-                        to open the color choosing dialog.
+            to open the color choosing dialog.
     * GnuPG path: choose the correct path to the GnuPG executable.  Click the
-                  button to open the file dialog.
+            button to open the file dialog.
+    * GnuPG default recipients. Click the button to open the recipients dialog.
+            The default recipients (may be just one) are the public keys that
+            will be used to encrypt all the files at saving time, except if
+            using the 'Save To' option. Be sure to always select your public
+            key, or you won't be able to open the file -- only the users with
+            the corresponding private keys to the chosen public keys can decrypt
+            the file.
 
 Help menu
 ---------

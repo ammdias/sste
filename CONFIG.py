@@ -3,8 +3,8 @@
 
 DOC = 'Installation script for Secure Simple Text Editor.'
 COPYRIGHT_YEAR = '2019'
-VERSION = '0.3'
-DATE = '2023-11-15'
+VERSION = '1.0'
+DATE = '2023-11-28'
 AUTHOR = 'António Manuel Dias <ammdias@gmail.com>'
 LICENSE = '''
 This program is free software: you can redistribute it and/or modify
@@ -24,8 +24,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 # List of file to be copied to installation the directory
 FILES = ('sste.py', 'seditor.py', 'segpg.py', 'semessage.py', 'sesearch.py',
-         'sesettings.py', 'setext.py', 'sste.desktop', 'sste.svg',
-         '__version__', 'LICENSE.md', 'README.md', 'CHANGES.md')
+         'sesettings.py', 'serecipients.py', 'setext.py', 'sste.desktop',
+         'sste.svg', '__version__', 'LICENSE.md', 'README.md', 'CHANGES.md')
 
 # List of directories to be copied to the installation directory
 TREES = ('locales',)

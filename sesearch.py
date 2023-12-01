@@ -17,8 +17,8 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
 """
 
-__version__ = '0.3'
-__date__ = '2023-11-13'
+__version__ = '1.0'
+__date__ = '2023-11-28'
 __license__ ='GNU General Public License version 3'
 __author__ = 'António Manuel Dias <ammdias@gmail.com>'
 
@@ -51,18 +51,25 @@ class SearchDialog(Toplevel):
         d = ttk.Label(self, text=_('Find text:'))
         d.grid(column=0, row=0, sticky=W, padx=2, pady=2)
         t = ttk.Entry(self, width=20, textvariable=self._search)
-        t.grid(column=0, row=1, sticky=(W, E), padx=2, pady=2)
+        t.grid(column=0, row=1, columnspan=3, sticky=(W, E), padx=2, pady=2)
         t.focus()
         
+        buttonrow = 2
         if replace:
             self._replace = StringVar()
             d = ttk.Label(self, text=_('Replace with:'))
             d.grid(column=0, row=2, sticky=W, padx=2, pady=2)
             t = ttk.Entry(self, width=20, textvariable=self._replace)
-            t.grid(column=0, row=3, sticky=(W, E), padx=2, pady=2)
+            t.grid(column=0, row=3, columnspan=3, sticky=(W, E), padx=2, pady=2)
+            buttonrow = 4
+
+        close = ttk.Button(self, text=_('Close'), command=self.onClose)
+        close.grid(row=buttonrow, column=1, sticky=(W, E), padx=5, pady=10)
+        search = ttk.Button(self, text=_('Search'), command=self.onSearch)
+        search.grid(row=buttonrow, column=2, sticky=(W, E), padx=5, pady=10)
 
         self.bind('<Return>', self.onSearch)
-        self.bind('<Escape>', self.onQuit)
+        self.bind('<Escape>', self.onClose)
 
 
     def onSearch(self, *args):
@@ -101,5 +108,5 @@ class SearchDialog(Toplevel):
                 self.destroy()
 
 
-    def onQuit(self, *args):
+    def onClose(self, *args):
         self.destroy()

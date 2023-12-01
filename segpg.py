@@ -18,12 +18,13 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
 """
 
-__version__ = '0.3'
-__date__ = '2023-11-12'
+__version__ = '1.0'
+__date__ = '2023-11-28'
 __license__ ='GNU General Public License version 3'
 __author__ = 'António Manuel Dias <ammdias@gmail.com>'
 
 
+import re
 import sys
 import subprocess
 from setext import _
@@ -45,9 +46,8 @@ def checkGnuPG(gpg):
     '''Check ig GnuPG is available.
     gpg: path to GnuPG executable.
     '''
-
     try:
-        res = subprocess.run([gpg, '--version'])
+        res = subprocess.run([gpg, '--version'], stdout=subprocess.DEVNULL)
     except:
         return False
 
@@ -55,11 +55,10 @@ def checkGnuPG(gpg):
 
 
 def encrypt(gpg, text, filename):
-    '''Encrypt text with password.
+    '''Encrypt text with symmetric key.
     gpg: path to GnuPG executable.
-    passwd: passphrase to use in encryption.
     text: string with text to encrypt.
-    Return bytes array with encrypted text.
+    filename: path to the output file.
     '''
     try:
         res = subprocess.run([gpg, '--symmetric', '--quiet', '--yes',
@@ -73,12 +72,35 @@ def encrypt(gpg, text, filename):
         raise GnuPGError(res.stderr.decode(sys.stdout.encoding))
 
 
-def decrypt(gpg, filename):
-    '''Decrypt text with password.
+def encryptTo(gpg, recipients, text, filename):
+    '''Encrypt text with public key(s).
     gpg: path to GnuPG executable.
-    passwd: passphrase to use in decryption.
-    text: bytes array with encrypted text.
-    Returns string with decrypted text.'''
+    recipients: list of GnuPG recipient email addresses.
+    text: string with text to encrypt.
+    filename: path to the output file.
+    '''
+    if not recipients:
+        raise GnuPGError(_('At least one recipient must be given.'))
+
+    try:
+        recipients = [ f'--recipient={r}' for r in recipients ]
+        res = subprocess.run([gpg, '--encrypt', *recipients, '--quiet', '--yes',
+                                   '--output', filename],
+                             capture_output=True,
+                             input=text.encode(sys.stdin.encoding)) 
+    except:
+        raise Exception(_('Could not execute GnuPG.'))
+
+    if res.returncode != 0:
+        raise GnuPGError(res.stderr.decode(sys.stdout.encoding))
+
+
+def decrypt(gpg, filename):
+    '''Decrypt encrypted file.
+    gpg: path to GnuPG executable.
+    filename: path to the encrypted file.
+    Returns string with decrypted text.
+    '''
     try:
         res = subprocess.run([gpg, '--decrypt', '--quiet', filename],
                              capture_output=True) 
@@ -90,3 +112,26 @@ def decrypt(gpg, filename):
 
     return res.stdout.decode(sys.stdout.encoding)
 
+
+def keyIds(gpg):
+    '''Return list of available GnuPG public keys.
+    gpg: path to GnuPG executable.
+    '''
+    try:
+        res = subprocess.run([gpg, '--list-public-keys', '--with-colons'],
+                             capture_output=True)
+    except:
+        raise Exception(_('Could not execute GnuPG.'))
+
+    if res.returncode != 0:
+        raise GnuPGError(res.stderr.decode(sys.stdout.encoding))
+
+    # GnuPG result with option --with-colons is always UTF-8 encoded
+    keys = [ k.split(':') for k in res.stdout.decode('utf8').splitlines() ]
+
+    # return list of email addresses if keys are not revoked or expired
+    pattern = re.compile('<(.*)>')
+    ids = [ re.search(pattern, k[9])
+                for k in keys if k[0]=='uid' and k[1] not in ('r', 'e') ]
+
+    return [ i.group(1) for i in ids if i ]

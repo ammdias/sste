@@ -17,8 +17,8 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
 """
 
-__version__ = '0.3'
-__date__ = '2023-11-12'
+__version__ = '1.0'
+__date__ = '2023-11-29'
 __license__ ='GNU General Public License version 3'
 __author__ = 'António Manuel Dias <ammdias@gmail.com>'
 
@@ -34,7 +34,8 @@ from setext import _
 from semessage import TextDialog
 from sesearch import SearchDialog
 from sesettings import SettingsDialog
-from segpg import checkGnuPG, encrypt, decrypt, GnuPGError
+from serecipients import RecipientsDialog
+from segpg import checkGnuPG, encrypt, encryptTo, decrypt, GnuPGError, keyIds
 
 
 #-------------------------------------------------------------------------------
@@ -49,28 +50,17 @@ class SecureEditor():
         config: configuration dictionary
         filename: path to filename to open
         '''
+        # Main window
         self.win = win
         self.win.title(SSTE_NAME)
         self.win.option_add('*tearOff', FALSE)
+        
         self.config = config
 
-        self.text = Text(win, undo=TRUE, wrap='none')
-        vscrl = ttk.Scrollbar(win, orient=VERTICAL, command=self.text.yview)
-        hscrl = ttk.Scrollbar(win, orient=HORIZONTAL, command=self.text.xview)
-        self.text.configure(yscrollcommand=vscrl.set,
-                            xscrollcommand=hscrl.set)
-        self.text['foreground'] = self.config['fgcolor']
-        self.text['background'] = self.config['bgcolor']
-        self.text['insertbackground'] = self.config['fgcolor']
-
-        self.text.grid(column=0, row=0, sticky=(W,N,E,S))
-        vscrl.grid(column=1, row=0, sticky=(N,S))
-        hscrl.grid(column=0, row=1, sticky=(W,E))
-        self.win.columnconfigure(0, weight=1)
-        self.win.rowconfigure(0, weight=1)
-
+        self.buildElements()
         self.buildMenu()
         self.bindAccelerators()
+        self.bindEvents()
 
         if not checkGnuPG(self.config['gnupg']):
             self.getGnuPGPath()
@@ -80,6 +70,7 @@ class SecureEditor():
             self.openFile()
         else:
             self.onNew()
+            self.statusUpdate()
 
 
     #--------------------------------------------------------------------------
@@ -127,6 +118,30 @@ class SecureEditor():
             self.saveFile()
 
 
+    def onSaveTo(self, *args):
+        '''Save document encrypted to specific GnuPG recipients.
+        '''
+        settings = {
+                'recipients': keyIds(self.config['gnupg']),
+                'selected': []
+        }
+        rd = RecipientsDialog(self.win, settings)
+        self.win.wait_window(rd)
+
+        if settings['selected']:
+            if self.filename == DEFAULT_FILENAME:
+                f = filedialog.asksaveasfilename()
+                if f:
+                    self.filename = f
+                else:
+                    return False
+            self.saveFile(settings['selected'])
+        else:
+            return False
+
+        return True
+
+
     def onQuit(self, *args):
         '''Close program.
         '''
@@ -155,7 +170,8 @@ class SecureEditor():
     def onSettings(self, *args):
         '''Change application settings.
         '''
-        SettingsDialog(self.win, self.text, self.config)
+        sd = SettingsDialog(self.win, self.text, self.config)
+        self.win.wait_window(sd)
 
 
     def onManual(self, *args):
@@ -189,6 +205,12 @@ class SecureEditor():
                                                  SSTE_WARRANTY))
 
 
+    def onModified(self, *args):
+        '''React to Modified event.
+        '''
+        self.statusUpdate()
+
+
     #--------------------------------------------------------------------------
     # utility functions
 
@@ -201,8 +223,8 @@ class SecureEditor():
                 return
         
         self.config['gnupg'] = ''
-        self.error('Could not find GnuPG in the PATH.\n'
-                   'Please configure it manually.')
+        self.error(_('Could not find GnuPG in the PATH.\n'
+                     'Please configure it manually.'))
         self.onSettings()
 
 
@@ -227,7 +249,7 @@ class SecureEditor():
         '''
         if self.text.edit_modified():
             if messagebox.askyesno(
-                    message=('Close document'),
+                    message=_('Close document'),
                     detail=_('File has changed. Do you want to save it?'),
                     title=SSTE_NAME,
                     icon='question'):
@@ -255,12 +277,18 @@ class SecureEditor():
         self.text.edit_modified(0)
 
     
-    def saveFile(self):
+    def saveFile(self, recipients=None):
         '''Encrypt and save file.
         '''
         try:
             text = self.text.get('1.0', 'end-1c')
-            encrypt(self.config['gnupg'], text, self.filename)
+            if recipients:
+                encryptTo(self.config['gnupg'], recipients, text, self.filename)
+            elif self.config['gpgrcpts']:
+                encryptTo(self.config['gnupg'], self.config['gpgrcpts'],
+                          text, self.filename)
+            else:
+                encrypt(self.config['gnupg'], text, self.filename)
         except GnuPGError as e:
             self.error(_('GnuPG error:\n{}').format(str(e)))
             return
@@ -271,8 +299,50 @@ class SecureEditor():
         self.text.edit_modified(0)
 
 
+    def statusUpdate(self, *args):
+        '''Update status bar text.
+        '''
+        if self.text.edit_modified():
+            mod = _('[ Modified ]')
+        elif self.filename != DEFAULT_FILENAME:
+            mod = _('[ Saved ]')
+        else:
+            mod = ''
+        self.statusbar.set(_('File:  {}  {}').format(self.filename, mod))
+
+
     #--------------------------------------------------------------------------
     # user interce building functions
+
+    def buildElements(self):
+        '''Build UI elements.
+        '''
+        # text widget
+        self.text = Text(self.win, undo=TRUE, wrap='none')
+        self.text['foreground'] = self.config['fgcolor']
+        self.text['background'] = self.config['bgcolor']
+        self.text['insertbackground'] = self.config['fgcolor']
+        self.text.grid(column=0, row=0, sticky=(W,N,E,S))
+
+        # scroll bars
+        vscrl = ttk.Scrollbar(self.win, orient=VERTICAL,
+                                        command=self.text.yview)
+        hscrl = ttk.Scrollbar(self.win, orient=HORIZONTAL,
+                                        command=self.text.xview)
+        vscrl.grid(column=1, row=0, sticky=(N,S))
+        hscrl.grid(column=0, row=1, sticky=(W,E))
+        self.text.configure(yscrollcommand=vscrl.set,
+                            xscrollcommand=hscrl.set)
+        
+        self.win.columnconfigure(0, weight=1)
+        self.win.rowconfigure(0, weight=1)
+
+        # status bar
+        self.statusbar = StringVar()
+        sb = ttk.Label(self.win)
+        sb['textvariable'] = self.statusbar
+        sb.grid(column=0, row=2, sticky=W, padx=20, pady=5)
+
 
     def buildMenu(self):
         '''Build and insert all menus.
@@ -296,6 +366,8 @@ class SecureEditor():
         lbl, pos = labelUnderline(_('Save _As...'))
         fileMenu.add_command(label=lbl, underline=pos,
                              accelerator=_('Ctrl+Shift+S'), command=self.onSaveAs)
+        lbl, pos = labelUnderline(_('Save _To...'))
+        fileMenu.add_command(label=lbl, underline=pos, command=self.onSaveTo)
         fileMenu.add_separator()
         lbl, pos = labelUnderline(_('_Quit'))
         fileMenu.add_command(label=lbl, underline=pos,
@@ -380,6 +452,12 @@ class SecureEditor():
 
         # Help menu
         self.win.bind(_('<F1>'), self.onManual)
+
+
+    def bindEvents(self):
+        '''Bind events.
+        '''
+        self.text.bind('<<Modified>>', self.onModified)
 
 
 #------------------------------------------------------------------------------
