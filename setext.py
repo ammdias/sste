@@ -17,8 +17,8 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 """
 
-__version__ = '1.0'
-__date__ = '2023-12-01'
+__version__ = '1.1'
+__date__ = '2023-12-09'
 __license__ ='GNU General Public License version 3'
 __author__ = 'António Manuel Dias <ammdias@gmail.com>'
 
@@ -55,7 +55,7 @@ DEFAULT_FILENAME = _('[ New secure text file ]')
 # Legal stuff constants
 
 SSTE_NAME = 'Secure Simple Text Editor'
-SSTE_VERSION = '1.0'
+SSTE_VERSION = '1.1'
 SSTE_WEBSITE = 'https://github.com/ammdias/sste'
 SSTE_WEBSITE_LABEL = 'AMMDIAS'
 SSTE_SHORT_COPYRIGHT = _('''Editor for secure (encrypted) simple text files
@@ -171,6 +171,7 @@ the users doesn't have a GnuPG private/public key pair.
 
 Depends on Python 3.4+, with Tkinter, and GnuPG 2.
 
+
 Installation and first run
 ==========================
 
@@ -281,4 +282,16 @@ Help menu
 * Copyright: display the copyright information.
 
 * Warranty: display the warranty information.
+
+
+Uninstall application
+=====================
+
+The program may be uninstalled from the terminal with the command:
+
+    $ sste --uninstall
+
+or, from within the folder where the program is installed:
+
+    $ python3 UNINSTALL.py
 ''')

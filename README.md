@@ -1,6 +1,6 @@
 Secure Simple Text Editor
 =========================
-version 1.0
+version 1.1
 
 Copyright (C) 2019 António Manuel Dias
 
@@ -97,6 +97,10 @@ installation script, following these instructions:
          $ sste
 
    Then, find the program in your desktop environment start menu and run it.
+
+3. You may uninstall application with:
+
+         $ sste --uninstall
 
 
 ## BUILD A NEW LOCALE (for localizers)

@@ -19,8 +19,8 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
 """
 
-__version__ = '1.0'
-__date__ = '2023-12-01'
+__version__ = '1.1'
+__date__ = '2023-12-09'
 __license__ ='GNU General Public License version 3'
 __author__ = 'António Manuel Dias <ammdias@gmail.com>'
 
@@ -78,7 +78,15 @@ parser.add_argument("-w", "--warranty", action="store_true",
 parser.add_argument("-v", "--version", action="store_true",
                     help=_('show version information.'))
 
+parser.add_argument("--uninstall", action="store_true",
+                    help=_('uninstall application'))
+
 args = parser.parse_args()
+
+# uninstall application
+if args.uninstall:
+    from UNINSTALL import uninstall
+    uninstall()
 
 # check options to show program information
 if args.copyright:

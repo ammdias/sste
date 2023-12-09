@@ -5,6 +5,8 @@ Secure Simple Text Editor
 
 Changes list:
 
+    * 1.1: Added uninstall option.
+
     * 1.0: Possibility of saving with GnuPG public keys.
            Settings now include default GnuPG recipients.
            New status bar displaying file name and its saved status.

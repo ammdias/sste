@@ -3,8 +3,8 @@
 
 DOC = 'Installation script for Secure Simple Text Editor.'
 COPYRIGHT_YEAR = '2019'
-VERSION = '1.0'
-DATE = '2023-11-28'
+VERSION = '1.1'
+DATE = '2023-12-09'
 AUTHOR = 'António Manuel Dias <ammdias@gmail.com>'
 LICENSE = '''
 This program is free software: you can redistribute it and/or modify
@@ -25,6 +25,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 # List of file to be copied to installation the directory
 FILES = ('sste.py', 'seditor.py', 'segpg.py', 'semessage.py', 'sesearch.py',
          'sesettings.py', 'serecipients.py', 'setext.py', 'sste.desktop',
+         'UNINSTALL.py',
          'sste.svg', '__version__', 'LICENSE.md', 'README.md', 'CHANGES.md')
 
 # List of directories to be copied to the installation directory
@@ -36,14 +37,14 @@ ICO_FILE = 'sste.svg'
 # Name of the desktop entry file (for GUI menus)
 DESKTOP_FILE = 'sste.desktop'
 
-# Name of the python file to be called to start the program
-START_SCRIPT = 'sste.py'
+# Files to make executable
+EXECS = ('sste.py',)
 
 # Name of the application (will be the name of the installation directory)
 APP_NAME = 'sste'
 
-# Name of the symbolic link to start the program
-LINK_NAME = 'sste'
+# Symbolic links to make: dictionary of 'link name': 'executable name' pairs
+LINKS = {'sste': 'sste.py'}
 
 # List of configuration files
-CONFIG_FILES = ()
+CONFIG_FILES = ('sste',)

@@ -1,6 +1,6 @@
 [Desktop Entry]
 Encoding=UTF-8
-Version=0.1.1
+Version=1.1
 Name=SSTE
 GenericName=Secure Simple Text Editor
 Comment=Simple text editor that reads and saves GnuPG symmetric encripted files

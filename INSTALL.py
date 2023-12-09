@@ -16,12 +16,53 @@ ICO_DIR = os.path.join('~', '.local', 'share', 'icons')
 APP_DIR = os.path.join('~', '.local', 'share', 'applications')
 CONFIG_DIR = os.path.join('~', '.config')
 
+INSTALL_LOG = []
+
 
 def _quit(msg):
     '''Print error message and quit.
     '''
     print(f'Error: {msg}\n', file=sys.stderr)
+    _rollback()
     sys.exit(1)
+
+
+def _log(ptype, path):
+    '''Record entry in install log.
+    '''
+    INSTALL_LOG.append((ptype, path))
+
+
+def _rollback():
+    '''Roll back installation.
+    '''
+    try:
+        ignore_config_files = False
+        for ptype, path in INSTALL_LOG:
+            match ptype:
+                case 'dir':
+                    shutil.rmtree(path)
+                case 'link':
+                    os.remove(path)
+                case 'config_dir':
+                    if yesno(f"Remove settings directory '{path}'?"):
+                        shutil.rmtree(path)
+                        ignore_config_files = True
+                case 'config_file':
+                    if ignore_config_files:
+                        continue
+                    if yesno(f"Remove configuration file '{path}'?"):
+                        os.remove(path)
+                case _:
+                    _quit('Unknown log entry type.')
+    except Exception as e:
+        print('Installation could not be rolled back.\n'
+              'Some files or directories may still be on your filesystem.\n'
+              'Please check these paths manually:\n', file=sys.stderr)
+        print('\n'.join([path for ptype,path in INSTALL_LOG]), file=sys.stderr)
+        sys.exit(1)
+
+    print('Installation rolled back successfully.', file=sys.stderr)
 
 
 def yesno(question):
@@ -45,7 +86,6 @@ try:
     # get installation directories
     d = input(f'Installation directory [{INSTALL_DIR}]: ').strip()
     INSTALL_DIR = os.path.expanduser(os.path.join(d or INSTALL_DIR, APP_NAME))
-    START_SCRIPT_PATH = os.path.join(INSTALL_DIR, START_SCRIPT)
     if ICO_FILE:
         ICO_FILE_PATH = os.path.join(INSTALL_DIR, ICO_FILE)
     if DESKTOP_FILE:
@@ -53,7 +93,6 @@ try:
 
     d = input(f'Start link directory [{BIN_DIR}]: ').strip()
     BIN_DIR = os.path.expanduser(d or BIN_DIR)
-    LINK_PATH = os.path.join(BIN_DIR, LINK_NAME)
 
     if ICO_FILE:
         d = input(f'Icons directory [{ICO_DIR}]: ').strip()
@@ -96,9 +135,14 @@ try:
                 print()
             print('Removing old version...')
             shutil.rmtree(INSTALL_DIR)
-        for p in (LINK_PATH, ICO_PATH, APP_PATH):
+        for p in (ICO_PATH, APP_PATH):
             if p and os.path.lexists(p):
-                print(f'Removing old symbolic link {p}...')
+                print(f"Removing old symbolic link '{p}'...")
+                os.remove(p)
+        for i in LINKS:
+            p = os.path.join(BIN_DIR, i)
+            if os.path.lexists(p):
+                print(f"Removing old symbolic link '{i}'...")
                 os.remove(p)
     except Exception as e:
         _quit(f"Could not remove old installation. Reason:\n{e}")
@@ -108,6 +152,7 @@ try:
     try:
         print('Creating installation directories...')
         os.makedirs(INSTALL_DIR)
+        _log('dir', INSTALL_DIR)
         print('Copying files:')
         for i in FILES:
             print(f'... {i}')
@@ -120,20 +165,36 @@ try:
         _quit(f"Could not copy files to installation directory. Reason:\n{e}")
 
 
+    # make files executable
+    try:
+        print('Configuring executable files...')
+        for i in EXECS:
+            print(f'... {i}')
+            os.chmod(os.path.join(INSTALL_DIR, i), 0o755)
+    except Exception as e:
+        _quit(f"Could not change file '{i}' to executable. Reason:\n{e}")
+
+
     # make symbolic links
     try:
-        print('Creating symbolic link to startup script...')
-        os.chmod(START_SCRIPT_PATH, 0o755)
+        print('Creating symbolic links...')
         os.makedirs(BIN_DIR, exist_ok=True)
-        os.symlink(START_SCRIPT_PATH, LINK_PATH)
+        for i in LINKS:
+            print(f'... {i}')
+            fpath = os.path.join(INSTALL_DIR, LINKS[i])
+            lpath = os.path.join(BIN_DIR, i)
+            os.symlink(fpath, lpath)
+            _log('link', lpath)
+            print
     except Exception as e:
-        _quit(f"Could not create symbolic link to application script. Reason:\n{e}")
+        _quit(f"Could not create symbolic link '{i}'. Reason:\n{e}")
 
     if ICO_FILE:
         try:
             print('Creating symbolic link to icon...')
             os.makedirs(ICO_DIR, exist_ok=True)
             os.symlink(ICO_FILE_PATH, ICO_PATH)
+            _log('link', ICO_PATH)
         except Exception as e:
             _quit(f"Could not create symbolic link to icon. Reason:\n{e}")
 
@@ -142,6 +203,7 @@ try:
             print('Creating symbolic link to desktop file...')
             os.makedirs(APP_DIR, exist_ok=True)
             os.symlink(DESKTOP_FILE_PATH, APP_PATH)
+            _log('link', APP_PATH)
         except Exception as e:
             _quit(f"Could not create symbolic link to desktop file. Reason:\n{e}")
 
@@ -151,15 +213,31 @@ try:
         try:
             print('Creating configuration files directory...')
             os.makedirs(CONFIG_DIR, exist_ok=True)
+            if APP_NAME in CONFIG_DIR:
+                _log('config_dir', CONFIG_DIR)
             print('Copying necessary configuration files:')
             for i in CONFIG_FILES:
                 if not os.path.exists(os.path.join(CONFIG_DIR, i)):
                     print(f'... {i}')
                     shutil.copy2(os.path.join(PKG_DIR, i), CONFIG_DIR) 
+                    _log('config_file', os.path.join(CONFIG_DIR, i))
         except Exception as e:
             _quit(f"Could not copy configuration files. Reason:\n{e}")
 
+
+    # save install log to install directory
+    try:
+        with open(os.path.join(INSTALL_DIR, 'install.log'), 'w') as f:
+            for entry in INSTALL_LOG:
+                print(f'{entry[0]}:{entry[1]}', file=f)
+    except Exception as e:
+        _quit(f'Could not save install log. Reason:\n{e}')
+
     print('\nApplication successfully installed.\n')
 
-except:
-    print("\nInstallation interrupted by user or unknown error.\n")
+
+except Exception as e:
+    print(e, file=sys.stderr)
+    print("\nInstallation interrupted by user or unknown error.\n", file=sys.stderr)
+    _rollback()
+
