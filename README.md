@@ -1,6 +1,6 @@
 Secure Simple Text Editor
 =========================
-version 1.1
+version 1.2
 
 Copyright (C) 2019 António Manuel Dias
 

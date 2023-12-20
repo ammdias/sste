@@ -4,8 +4,8 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: 1.1\n"
-"POT-Creation-Date: 2023-12-09 20:13+0000\n"
+"Project-Id-Version: 1.2\n"
+"POT-Creation-Date: 2023-12-20 17:43+0000\n"
 "PO-Revision-Date: 2023-12-09 20:20+WET\n"
 "Last-Translator: António Manuel Dias <ammdias@gmail.com>\n"
 "Language-Team: pt_PT <ammdias>\n"
@@ -63,7 +63,7 @@ msgstr "_Ficheiro"
 msgid "_New"
 msgstr "_Novo"
 
-#: seditor.py:321
+#: seditor.py:359
 msgid "Ctrl+N"
 msgstr "Ctrl+N"
 
@@ -810,31 +810,31 @@ msgstr ""
 "\n"
 "    $ python3 UNINSTALL.py\n"
 
-#: sste.py:67
+#: sste.py:79
 msgid "file to open"
 msgstr "ficheiro a abrir"
 
-#: sste.py:70
+#: sste.py:82
 msgid "GnuPG command, including complete path if not on PATH"
 msgstr "Comando do GnuPG, incluindo a localização completa se não estiver no PATH"
 
-#: sste.py:73
+#: sste.py:85
 msgid "show copyright information."
 msgstr "mostrar licença de utilização."
 
-#: sste.py:76
+#: sste.py:88
 msgid "show warranty information."
 msgstr "mostrar garantia."
 
-#: sste.py:79
+#: sste.py:91
 msgid "show version information."
 msgstr "mostrar versão da aplicação."
 
-#: sste.py:82
+#: sste.py:94
 msgid "uninstall application"
 msgstr "desinstalar aplicação"
 
-#: sste.py:106
+#: sste.py:126
 msgid ""
 "Could not load '.config' file.\n"
 "Starting with default configuration."

@@ -5,6 +5,8 @@ Secure Simple Text Editor
 
 Changes list:
 
+    * 1.2: Program now respects config file installation path configuration.
+
     * 1.1: Added uninstall option.
 
     * 1.0: Possibility of saving with GnuPG public keys.

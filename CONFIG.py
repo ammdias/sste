@@ -3,8 +3,8 @@
 
 DOC = 'Installation script for Secure Simple Text Editor.'
 COPYRIGHT_YEAR = '2019'
-VERSION = '1.1'
-DATE = '2023-12-09'
+VERSION = '1.2'
+DATE = '2023-12-20'
 AUTHOR = 'António Manuel Dias <ammdias@gmail.com>'
 LICENSE = '''
 This program is free software: you can redistribute it and/or modify

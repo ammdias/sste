@@ -17,8 +17,8 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 """
 
-__version__ = '1.1'
-__date__ = '2023-12-09'
+__version__ = '1.2'
+__date__ = '2023-12-20'
 __license__ ='GNU General Public License version 3'
 __author__ = 'António Manuel Dias <ammdias@gmail.com>'
 
@@ -54,8 +54,12 @@ DEFAULT_FILENAME = _('[ New secure text file ]')
 #------------------------------------------------------------------------------
 # Legal stuff constants
 
+try:
+    SSTE_VERSION = open(os.path.join(sys.path[0], '__version__')).read().strip()
+except:
+    SSTE_VERSION = __version__
+
 SSTE_NAME = 'Secure Simple Text Editor'
-SSTE_VERSION = '1.1'
 SSTE_WEBSITE = 'https://github.com/ammdias/sste'
 SSTE_WEBSITE_LABEL = 'AMMDIAS'
 SSTE_SHORT_COPYRIGHT = _('''Editor for secure (encrypted) simple text files

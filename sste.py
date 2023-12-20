@@ -19,8 +19,8 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
 """
 
-__version__ = '1.1'
-__date__ = '2023-12-09'
+__version__ = '1.2'
+__date__ = '2023-12-14'
 __license__ ='GNU General Public License version 3'
 __author__ = 'António Manuel Dias <ammdias@gmail.com>'
 
@@ -43,6 +43,18 @@ config_files = (
     os.path.expanduser(os.path.join('~', '.sste')),
     os.path.expanduser(os.path.join('~', '.config', 'sste'))
 )
+
+# read install log to check original config file path
+try:
+    for i in open(os.path.join(sys.path[0], 'install.log')).readlines():
+        ptype, sep, path = i.strip().partition(':')
+        if '' in (ptype, sep, path):
+            break                    # invalid log, ignore
+        if ptype == 'config_file':
+            config_files = (path, *config_files)
+            break
+except:
+    pass                             # error reading log, ignore
 
 for i in config_files:
     if os.path.exists(i):

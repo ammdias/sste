@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2023-12-09 20:28+0000\n"
+"POT-Creation-Date: 2023-12-20 18:06+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -323,7 +323,7 @@ msgstr ""
 msgid "[ New secure text file ]"
 msgstr ""
 
-#: setext.py:61
+#: setext.py:65
 msgid ""
 "Editor for secure (encrypted) simple text files\n"
 "(C) 2019 António Manuel Dias\n"
@@ -342,7 +342,7 @@ msgid ""
 "along with this program.  If not, see <https://www.gnu.org/licenses/>."
 msgstr ""
 
-#: setext.py:77
+#: setext.py:81
 msgid ""
 "From the Preamble of the GNU General Public License:\n"
 "        \n"
@@ -380,7 +380,7 @@ msgid ""
 "If it's missing please refer to http://www.gnu.org/licenses/gpl.txt\n"
 msgstr ""
 
-#: setext.py:113
+#: setext.py:117
 msgid ""
 "From the GNU General Public License:\n"
 "    \n"
@@ -409,7 +409,7 @@ msgid ""
 "HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.\n"
 msgstr ""
 
-#: setext.py:144
+#: setext.py:148
 msgid ""
 "\n"
 "Secure Simple Text Editor\n"
@@ -566,31 +566,31 @@ msgid ""
 "    $ python3 UNINSTALL.py\n"
 msgstr ""
 
-#: sste.py:67
+#: sste.py:79
 msgid "file to open"
 msgstr ""
 
-#: sste.py:70
+#: sste.py:82
 msgid "GnuPG command, including complete path if not on PATH"
 msgstr ""
 
-#: sste.py:73
+#: sste.py:85
 msgid "show copyright information."
 msgstr ""
 
-#: sste.py:76
+#: sste.py:88
 msgid "show warranty information."
 msgstr ""
 
-#: sste.py:79
+#: sste.py:91
 msgid "show version information."
 msgstr ""
 
-#: sste.py:82
+#: sste.py:94
 msgid "uninstall application"
 msgstr ""
 
-#: sste.py:114
+#: sste.py:126
 msgid ""
 "Could not load '.config' file.\n"
 "Starting with default configuration."

@@ -220,7 +220,7 @@ try:
                 if not os.path.exists(os.path.join(CONFIG_DIR, i)):
                     print(f'... {i}')
                     shutil.copy2(os.path.join(PKG_DIR, i), CONFIG_DIR) 
-                    _log('config_file', os.path.join(CONFIG_DIR, i))
+                _log('config_file', os.path.join(CONFIG_DIR, i))
         except Exception as e:
             _quit(f"Could not copy configuration files. Reason:\n{e}")
 
@@ -236,8 +236,11 @@ try:
     print('\nApplication successfully installed.\n')
 
 
+except KeyboardInterrupt:
+    print("\nInstallation interrupted by user.\n", file=sys.stderr)
+    _rollback()
+
 except Exception as e:
-    print(e, file=sys.stderr)
-    print("\nInstallation interrupted by user or unknown error.\n", file=sys.stderr)
+    print(f"\nUnexpected error:\n{e}\n", file=sys.stderr)
     _rollback()
 
